@@ -48,3 +48,8 @@ LINEで通知を貰えたら、思い出してきちんと塗り直すことが�
 3. 機能実装：11/27 - 1/15
 4. MVPリリース：1/15〆切
 5. 本リリース：1/30
+
+## 画面遷移図
+[画面遷移図](https://www.figma.com/file/AuTXzXzspRWLh4hymbQoxy/Sunkissing!!?node-id=0%3A1&t=wDW6wXZRubjHHtvq-0)
+
+
