@@ -16,7 +16,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+#gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -48,9 +48,31 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# CSS、JSバンドラー
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
+
+# 日本語化
+gem 'rails-i18n'
+gem 'enum_help'
+
+# LINE API
+gem 'line-bot-api'
+
+# DBのスキーム表示
+gem 'annotate'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # RSpec関連
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'webdrivers'
+  # デバッグ
+  gem 'pry-rails'
 end
 
 group :development do
@@ -62,5 +84,15 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Lintチェック
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rails_best_practices', '~> 1.23', '>= 1.23.2'
+  # N+1問題解決してくれる便利な子
+  gem 'bullet'
+  # エラー画面整形
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
