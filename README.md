@@ -52,4 +52,5 @@ LINEで通知を貰えたら、思い出してきちんと塗り直すことが�
 ## 画面遷移図
 [画面遷移図](https://www.figma.com/file/AuTXzXzspRWLh4hymbQoxy/Sunkissing!!?node-id=0%3A1&t=wDW6wXZRubjHHtvq-0)
 
-
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/cfaaf5dac803533ddb5d89bc318fa2db.png)](https://gyazo.com/cfaaf5dac803533ddb5d89bc318fa2db)
