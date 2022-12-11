@@ -89,6 +89,8 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rails_best_practices', '~> 1.23', '>= 1.23.2'
+  gem 'rubocop-performance'
+  gem 'rubocop-rubycw'
   # N+1問題解決してくれる便利な子
   gem 'bullet'
   # エラー画面整形
