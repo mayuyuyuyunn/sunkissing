@@ -1,0 +1,38 @@
+# .rubocop.yml
+
+inherit_from: .rubocop_todo.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  - rubocop-performance
+  - rubocop-rubycw
+  - rubocop-rails
+
+AllCops:
+  # defaultで全てdisableにして設定したいものだけEnabled:trueに設定
+  DisabledByDefault: true
+  Exclude:
+    - 'gems/**/*'
+  # rubocop のバージョンをアップグレードしたときに新しいCopが自動的に有効になる設定。
+  NewCops: enable
+
+Bundler:
+  Enabled: true
+
+Gemspec:
+  Enabled: true
+
+Lint:
+  Enabled: true
+
+Performance:
+  Enabled: true
+
+Rubycw:
+  Enabled: true
+
+Security:
+  Enabled: true
