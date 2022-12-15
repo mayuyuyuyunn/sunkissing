@@ -33,11 +33,17 @@ module Sunkissing
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # rails gコマンドで自動生成されるファイルの設定
     config.generators do |g|
-      g.skip_routes true
-      g.assets false
-      g.helper false
-      g.test_framework false
+      g.skip_routes true # trueならroutes.rb変更せず、falseなら通常通り変更
+      g.assets false # CSS, JavaScriptファイル生成せず
+      g.helper false # ヘルパーファイルを生成しない
+      g.test_framework :rspec,
+        fixtures: false, # テストDBにレコードを作るfixtureの作成をスキップ(FactoryBotを使用するため)
+        view_specs: false, # ビューファイル用のスペックを作成しない
+        helper_specs: false, # ヘルパーファイル用のスペックを作成しない
+        routing_specs: false # routes.rb用のスペックファイル作成しない
     end
   end
 end
