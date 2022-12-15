@@ -14,7 +14,7 @@
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-#RSpecでCapybaraを扱えるようにする
+# RSpecでCapybaraを扱えるようにする
 require 'capybara/rspec'
 
 RSpec.configure do |config|
