@@ -23,6 +23,11 @@ module Sunkissing
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # Rails自体のアプリケーションの時刻の設定
+    config.time_zone = 'Tokyo'
+    # ActiveRecordでDBを読み書きする際に、DBに記録されている時間をどのタイムゾーンで読み込むかの設定
+    config.active_record.default_timezone = :local
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
