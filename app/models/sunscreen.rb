@@ -11,5 +11,6 @@ class Sunscreen < ApplicationRecord
     validates :spf
     validates :pa
     validates :capacity
+    validates :btand
   end
 end
