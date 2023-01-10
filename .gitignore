@@ -40,3 +40,6 @@ node_modules/
 
 /node_modules
 .env
+
+/mechanize-scrape/sunscreencsv
+/mechanize-scrape/urlcsv
