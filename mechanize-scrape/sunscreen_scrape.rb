@@ -12,38 +12,40 @@ agent = Mechanize.new
 
 # file = File.open('')
 
-$urls_ary.each do |n|
-  sleep(2)
-  # 商品詳細ページにアクセス
-  url = ""
-  page = agent.get(url)
-
-  # 商品名取得
-  product_name_elements = page.search('#product-spec .cat-name')
-  name = product_name_elements.children.inner_text
-  # 容量・税込み価格
-  capacity = page.at('//*[@id="pdt-info-newdb-1606"]/div[2]/div/ul/li[@class="clearfix"]/p[@class="info-desc"]').text
-  # メーカ名
-  maker = page.search('//*[@id="product-spec"]/dl[@class="maker clearfix"]/dd').inner_text
-  # ブランド名
-  brand = page.search('//*[@id="product-spec"]/dl[@class="brand-name clearfix"]/dd/a').inner_text
-  # SPF
-  spf = page.search('//*[@id="product-spec"]/dl[@class="spf clearfix"]/dd').inner_text
-  # 商品説明
-  desc = page.search('//*[@id="product-spec"]/dl[@class="item-description clearfix"]/dd').inner_text
-  # 商品カテゴリー
-  product_category = page.search('//*[@id="product-spec"]/dl[@class="item-category clearfix"]/dd').inner_text
-  # 色
-  color = page.search('//*[@id="product-spec"]/dl[@class="color clearfix"]/dd').inner_text
-  # pick up カテゴリー
-  pick_category = page.search('//*[@id="product-spec"]/dl[@class="pickup-category clearfix"]/dd').inner_text
-
-
-  CSV.open("sunscreens#{n}.csv",'w', force_quotes: true) do |csv|
-    csv << ['name', 'capacity', 'maker', 'brand', 'spf', 'desc', 'product_category','color', 'pick_category']
-    csv << [name, capacity, maker, brand, spf, desc, product_category, color, pick_category]
+CSV.open("sunscreens.csv",'w', force_quotes: true) do |csv|
+  # 先頭にヘッダ行追加
+  csv << ['id', 'name', 'capacity', 'maker', 'brand', 'spf', 'desc', 'product_category', 'feature', 'color', 'pick_category']
+  $urls_ary.each do |n|
+    # 商品詳細ページにアクセス
+    url = ""
+    page = agent.get("url")
+  
+    # 商品名取得
+    product_name_elements = page.search('#product-spec .cat-name')
+    name = product_name_elements.children.inner_text
+    # 容量・税込み価格
+    capacity = page.at('//*[@id="pdt-info-newdb-1606"]/div[2]/div/ul/li[@class="clearfix"]/p[@class="info-desc"]').text
+    # メーカ名
+    maker = page.search('//*[@id="product-spec"]/dl[@class="maker clearfix"]/dd').inner_text
+    # ブランド名
+    brand = page.search('//*[@id="product-spec"]/dl[@class="brand-name clearfix"]/dd/a').inner_text
+    # SPF
+    spf = page.search('//*[@id="product-spec"]/dl[@class="spf clearfix"]/dd').inner_text.gsub(/[\r\n]/,"")
+    # 商品説明
+    desc = page.search('//*[@id="product-spec"]/dl[@class="item-description clearfix"]/dd').inner_text.gsub(/[\r\n]/,"")
+    # 商品カテゴリー
+    product_category = page.search('//*[@id="product-spec"]/dl[@class="item-category clearfix"]/dd').inner_text.gsub(/[\r\n]/,"")
+    # 色
+    color = page.search('//*[@id="product-spec"]/dl[@class="color clearfix"]/dd').inner_text.gsub(/[\r\n]/,"")
+    # pick up カテゴリー
+    pick_category = page.search('//*[@id="product-spec"]/dl[@class="pickup-category clearfix"]/dd').inner_text
+    # 関心の高い成分・特徴
+    feature = page.search('//*[@id="product-spec"]/dl[@class="ingredient clearfix"]/dd/ul/li/a').inner_text
+    # データ入れ込み
+    csv << [ n, name, capacity, maker, brand, spf, desc, product_category, feature, color, pick_category]
   end
 end
+
 
 # メーカー名とブランド名は下記のやり方でも取得できる
 # product_name_elements = page.search('#product-spec dl dd')
