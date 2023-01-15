@@ -1,0 +1,2 @@
+class OdekakeType < ApplicationRecord
+end
