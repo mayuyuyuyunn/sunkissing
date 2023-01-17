@@ -1,18 +1,14 @@
 # == Schema Information
 #
-# Table name: tags
+# Table name: odekake_types
 #
 #  id         :bigint           not null, primary key
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-# Indexes
-#
-#  index_tags_on_name  (name) UNIQUE
-#
-require 'rails_helper'
+class OdekakeType < ApplicationRecord
+  has_many :schedules, dependent: :destroy
 
-RSpec.describe Tag, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  validates :name, presence: true, uniqueness: true
 end

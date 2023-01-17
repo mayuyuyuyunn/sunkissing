@@ -1,8 +1,29 @@
+# == Schema Information
+#
+# Table name: sunscreens
+#
+#  id          :bigint           not null, primary key
+#  brand       :string           not null
+#  capacity    :integer
+#  manufacture :string           not null
+#  name        :text             not null
+#  pa          :integer          default("pa_unknown"), not null
+#  price       :integer          not null
+#  spf         :integer          default("spf_unknown"), not null
+#  summary     :text             not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+# Indexes
+#
+#  index_sunscreens_on_name  (name) UNIQUE
+#
 class Sunscreen < ApplicationRecord
-  has_many :sunscreen_tags
-  has_many :tags, through: :sunscreen_tags
+  has_many :tags
+  has_many :sunscreen_tags, dependent: :destroy
   enum :spf, { spf_unknown: 0, thirty: 30, forty: 40, fifty: 50, fiftyplus: 55 }
   enum :pa, { pa_unknown: 0, plus1: 1, plus2: 2, plus3: 3, plus4: 4 }
+  enum :manufacture, { manufacture_unknown: 0 }
 
   validates :name, presence: true, uniqueness: true
   with_options presence: true do
@@ -11,6 +32,6 @@ class Sunscreen < ApplicationRecord
     validates :spf
     validates :pa
     validates :capacity
-    validates :btand
+    validates :brand
   end
 end
