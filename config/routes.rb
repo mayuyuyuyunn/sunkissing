@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # トップページ
+  root 'static_pages#top'
+  # 静的ページ
+  get '/terms', to: 'static_pages#terms'
+  get '/privacy_policy', to: 'static_pages#privacy_policy'
+  get '/guide', to: 'static_pages#guide'
 end
