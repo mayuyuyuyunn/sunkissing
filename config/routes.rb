@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :sunscreens
     resources :users
+    resources :tags
   end
 end
