@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   # プロフィール登録
   resources :profiles, only: %i[new create edit update destroy show]
+  # 日焼け止め
+  resources :sunscreens, only: %i[index show]
 end
