@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/guide', to: 'static_pages#guide'
   # ユーザー登録・ログイン周り
   resources :users, only: %i[new create]
-  
+  # プロフィール登録
+  resources :profiles, only: %i[new create edit update destroy show]
 end
