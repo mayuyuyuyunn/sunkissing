@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     resources :users
     resources :tags
     resources :schedules
+    resources :odekake_types
   end
 end
