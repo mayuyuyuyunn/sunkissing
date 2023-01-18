@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :sunscreens
     resources :users
     resources :tags
+    resources :schedules
   end
 end
