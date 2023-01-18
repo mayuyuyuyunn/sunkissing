@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :profiles, only: %i[new create edit update destroy show]
   # 日焼け止め
   resources :sunscreens, only: %i[index show]
+  # タグ
+  resources :tags, only: %i[index show]
   # admin
   namespace :admin do
     resources :sunscreens
