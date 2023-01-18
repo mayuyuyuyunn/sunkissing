@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :sunscreens, only: %i[index show]
   # タグ
   resources :tags, only: %i[index show]
+  # スケジュール
+  resources :schedules, only: %i[new create edit update destroy show]
   # admin
   namespace :admin do
     resources :sunscreens
