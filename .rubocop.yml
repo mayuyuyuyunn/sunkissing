@@ -39,3 +39,7 @@ Security:
 
 Style/Documentation:
   Enabled: false
+
+# クォーテーションのチェックを無効に
+Style/StringLiterals:
+  Enabled: false

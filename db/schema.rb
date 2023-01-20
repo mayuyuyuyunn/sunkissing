@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_15_084208) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_15_084932) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_15_084208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "odekake_type_id", null: false
+    t.datetime "leave_home_time", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["odekake_type_id"], name: "index_schedules_on_odekake_type_id"
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "sunscreen_tags", force: :cascade do |t|
@@ -71,6 +81,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_15_084208) do
   end
 
   add_foreign_key "profiles", "users"
+  add_foreign_key "schedules", "odekake_types"
+  add_foreign_key "schedules", "users"
   add_foreign_key "sunscreen_tags", "sunscreens"
   add_foreign_key "sunscreen_tags", "tags"
 end
