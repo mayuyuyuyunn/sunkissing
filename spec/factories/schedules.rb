@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # == Schema Information
 #
 # Table name: schedules
@@ -21,15 +19,10 @@
 #  fk_rails_...  (odekake_type_id => odekake_types.id)
 #  fk_rails_...  (user_id => users.id)
 #
->>>>>>> 0763d9d60b4d4bf699b8987ed8fdf77cd5dcb720
 FactoryBot.define do
   factory :schedule do
     user { nil }
     odekake_type { nil }
-<<<<<<< HEAD
-    leave_home_time { "2023-01-15 17:49:32" }
-=======
     leave_home_time { '2023-01-15 17:49:32' }
->>>>>>> 0763d9d60b4d4bf699b8987ed8fdf77cd5dcb720
   end
 end
