@@ -2,7 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // csrf-tokenを取得
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+<<<<<<< HEAD
   const LIFF_ID = "XXXXXXXXXXXXXXXX";
+=======
+  const LIFF_ID = "1657853635-5P9JrXx3";
+>>>>>>> 72883c3714beec23e83a9e6f4e73d4c39c323044
 
   liff.init({
     liffId: LIFF_ID
