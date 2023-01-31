@@ -1,0 +1,15 @@
+ja:
+  enums:
+    sunscreen:
+      spf:
+        spf_unknown: '不明'
+        thirty: '30'
+        forty: '40'
+        fifty: '50'
+        fifty_plus: '50+'
+      pa:
+        pa_unknown: '不明'
+        plus1: '+'
+        plus2: '++'
+        plus3: '+++'
+        plus4: '++++'

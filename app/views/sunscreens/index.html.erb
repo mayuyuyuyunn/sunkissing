@@ -1,2 +1,3 @@
-h1 Sunscreens#index
-p Find me in app/views/sunscreens/index.html.slim
+<% @sunscreens.each do |sunscreen| %>
+  <p><%= sunscreen.id %>:<%= sunscreen.name %><%= link_to '詳細', sunscreen_path(sunscreen), class: "btn btn-accent" %></p>
+<% end %>
