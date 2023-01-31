@@ -8,8 +8,8 @@
 <p><%=  Sunscreen.human_attribute_name(:pa) %>:<%= @sunscreen.pa_i18n %></p>
 <p><%=  Sunscreen.human_attribute_name(:summary) %>:<%= @sunscreen.summary %></p>
 <p><%= Tag.model_name.human %>:
-<% @sunscreen.sunscreen_tags.each do |tag| %>
-  <%= Tag.find(tag.id).name %>
+<% @sunscreen.tags.each do |tag| %>
+  <%= tag.name %>
 <% end %></p>
 <%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-warning" %>
 
