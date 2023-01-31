@@ -1,5 +1,29 @@
 ja:
   enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
+      age:
+        age_not_selected: '選択せず'
+        teen: '10代'
+        twenty: '20代'
+        thirty: '30代'
+        forty: '40代'
+        fifty: '50代'
+        sixth: '60代'
+        age_other: '70代以上'
+      gender:
+        gender_not_selected: '選択せず'
+        male: '男性'
+        female: '女性'
+        gender_other: 'その他'
+      skin_type:
+        normal: '普通肌'
+        oily: '脂性肌'
+        dry: '乾燥肌'
+        combination: '混合肌'
+        sensitive: '敏感肌'
     sunscreen:
       spf:
         spf_unknown: '不明'
