@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      profile: 'プロフィール'
+      sunscreen: '日焼け止め'
+      schedule: 'スケジュール'
+      tag: 'タグ'
+    attributes:
+      sunscreen:
+        name: '名称'
+        manufacture: 'メーカー'
+        brand: 'ブランド'
+        capacity: '容量'
+        price: '値段'
+        spf: 'SPF'
+        pa: "PA"
+      profile:
+        nickname: 'ニックネーム'
+
+
