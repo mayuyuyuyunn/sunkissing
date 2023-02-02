@@ -3,7 +3,11 @@
 # Table name: users
 #
 #  id           :bigint           not null, primary key
+#  age          :integer          default("age_not_selected"), not null
+#  gender       :integer          default("gender_not_selected"), not null
+#  prefecture   :integer          default("その他"), not null
 #  role         :integer          default("general"), not null
+#  skin_type    :integer          default(0), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  line_user_id :string           not null

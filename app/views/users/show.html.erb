@@ -1,0 +1,8 @@
+<h2>ユーザー詳細</h2>
+<p><%=  User.human_attribute_name(:gender) %>:<%= current_user.skin_type_i18n %></p>
+<p><%=  User.human_attribute_name(:age) %>:<%= current_user.age_i18n %></p>
+<p><%=  User.human_attribute_name(:skin_type) %>:<%= current_user.skin_type_i18n %></p>
+<p><%=  User.human_attribute_name(:prefecture) %>:<%= current_user.prefecture %></p>
+<%= link_to "ユーザー編集へ", edit_user_path(current_user), class: "btn btn-warning" %>
+<%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-warning" %>
+

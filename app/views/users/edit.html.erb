@@ -1,0 +1,19 @@
+<%= form_with model: @user, url: user_path, local: true do |f| %>
+  <div class="form-control w-full max-w-xs">
+  <%= f.label :gender %>
+  <%= f.select :gender, User.genders_i18n.invert {} %>
+  </div>
+  <div class="form-control w-full max-w-xs">
+  <%= f.label :skin_type %>
+  <%= f.select :skin_type, User.skin_types_i18n.invert {} %>
+  </div>
+  <div class="form-control w-full max-w-xs">
+  <%= f.label :prefecture %>
+  <%= f.select :prefecture, User.prefectures_i18n.invert {} %>
+  </div>
+  <div class="form-control w-full max-w-xs">
+  <%= f.label :age %>
+  <%= f.select :age, User.ages_i18n.invert {} %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

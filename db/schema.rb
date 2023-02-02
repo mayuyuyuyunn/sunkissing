@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_15_084932) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_065424) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,18 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_15_084932) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "nickname", null: false
-    t.integer "age", default: 0, null: false
-    t.integer "skyn_type", default: 0, null: false
-    t.integer "gender", default: 0, null: false
-    t.integer "prefecture", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -78,9 +66,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_15_084932) do
     t.integer "role", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "age", default: 0, null: false
+    t.integer "gender", default: 0, null: false
+    t.integer "prefecture", default: 0, null: false
+    t.integer "skin_type", default: 0, null: false
   end
 
-  add_foreign_key "profiles", "users"
   add_foreign_key "schedules", "odekake_types"
   add_foreign_key "schedules", "users"
   add_foreign_key "sunscreen_tags", "sunscreens"

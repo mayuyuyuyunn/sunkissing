@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   get '/privacy_policy', to: 'static_pages#privacy_policy'
   get '/guide', to: 'static_pages#guide'
   # ユーザー登録・ログイン周り
-  resources :users, only: %i[new create]
-  # プロフィール登録
-  resources :profiles, only: %i[new create edit update destroy show]
+  resources :users, only: %i[new create edit update show]
   # 日焼け止め
   resources :sunscreens, only: %i[index show]
   # タグ
