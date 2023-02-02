@@ -15,5 +15,9 @@ ja:
         price: '値段'
         spf: 'SPF'
         pa: "PA"
-      profile:
-        nickname: 'ニックネーム'
+      user:
+        role: '役割'
+        age: '年齢'
+        gender: '性別'
+        skin_type: '肌質'
+        prefecture: '都道府県'

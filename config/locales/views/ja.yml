@@ -5,7 +5,7 @@ ja:
         general: '一般'
         admin: '管理者'
       age:
-        age_not_selected: '選択せず'
+        age_not_selected: '未選択'
         teen: '10代'
         twenty: '20代'
         thirty: '30代'
@@ -14,7 +14,7 @@ ja:
         sixth: '60代'
         age_other: '70代以上'
       gender:
-        gender_not_selected: '選択せず'
+        gender_not_selected: '未選択'
         male: '男性'
         female: '女性'
         gender_other: 'その他'
