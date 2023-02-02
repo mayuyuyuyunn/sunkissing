@@ -16,10 +16,10 @@ class User < ApplicationRecord
   has_many :schedules, dependent: :destroy
 
   validates :line_user_id, presence: true, uniqueness: true
-  validates :age, presence: true, uniqueness: true
-  validates :gender, presence: true, uniqueness: true
-  validates :prefecture, presence: true, uniqueness: true
-  validates :skin_type, presence: true, uniqueness: true
+  validates :age, presence: true
+  validates :gender, presence: true
+  validates :prefecture, presence: true
+  validates :skin_type, presence: true
   
   enum role: { general: 0, admin: 1 }
   enum age: { age_not_selected: 0, teen: 10, twenty: 20, thirty: 30, forty: 40, fifty: 50, sixth: 60, age_other: 99 }
