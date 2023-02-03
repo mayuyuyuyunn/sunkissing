@@ -1,2 +1,12 @@
-h1 Schedules#new
-p Find me in app/views/schedules/new.html.slim
+<%= form_with model: @schedule, url: schedules_path, local: true do |f| %>
+  <div class="form-control w-full max-w-xs">
+  <%= f.label :odekake_type_id %>
+  <%= f.select :odekake_type_id, @odekake_types.map { |x| [x.name, x.id] }%>
+  </div>
+  <div class="form-control w-full max-w-xs">
+    <%= f.label :leave_home_time %>
+    <%= f.datetime_field :leave_home_time, {}%>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
