@@ -79,6 +79,7 @@ group :development, :test do
   gem 'webdrivers'
   # デバッグ
   gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
