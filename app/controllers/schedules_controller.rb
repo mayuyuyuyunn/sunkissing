@@ -8,8 +8,9 @@ class SchedulesController < ApplicationController
   def create
     @schedule = current_user.schedules.build(schedule_params)
     if @schedule.save
-      redirect_to root_path
+      redirect_to root_path, success: "スケジュールの登録が完了しました"
     else
+      flash.now[:error] = スケジュールの登録に失敗しました
       render :new
     end
   end
@@ -26,8 +27,9 @@ class SchedulesController < ApplicationController
     leave_home_time = Time.parse("#{leave_home_hour}:#{leave_home_minute}")
     @schedule.leave_home_time = leave_home_time
     if @schedule.update(schedule_params)
-      redirect_to root_path
+      redirect_to root_path, success: "スケジュールの編集が完了しました"
     else
+      flash.now[:error] = "スケジュールの編集に失敗しました"
       @schedule = current_user.schedules.find_by(leave_home_time: Date.today.all_day)
       render :edit
     end
@@ -37,6 +39,7 @@ class SchedulesController < ApplicationController
   end
 
   def show
+    @schedule = Schedule.find(params[:id])
   end
 
   private

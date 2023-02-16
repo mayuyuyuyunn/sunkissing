@@ -1,2 +1,4 @@
-h1 Schedules#show
-p Find me in app/views/schedules/show.html.slim
+<h2>スケジュール</h2>
+<p>本日のお出かけタイプ：<%= @schedule.odekake_type.name %></p>
+<p>本日のお家出発時間：<%= l @schedule.leave_home_time, format: :short %></p>
+<%= link_to "スケジュール編集へ", edit_schedule_path(params[:id]), class: "btn btn-warning" %>
