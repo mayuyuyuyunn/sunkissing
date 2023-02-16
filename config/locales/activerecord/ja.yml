@@ -2,10 +2,10 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
-      profile: 'プロフィール'
       sunscreen: '日焼け止め'
       schedule: 'スケジュール'
       tag: 'タグ'
+      odekake_type: 'お出かけタイプ'
     attributes:
       sunscreen:
         name: '名称'
@@ -15,9 +15,13 @@ ja:
         price: '値段'
         spf: 'SPF'
         pa: "PA"
+        summary: '商品説明'
       user:
         role: '役割'
         age: '年齢'
         gender: '性別'
         skin_type: '肌質'
         prefecture: '都道府県'
+      schedule:
+        leave_home_time: '家を出る時間'
+        odekake_type_id: 'お出かけタイプ'
