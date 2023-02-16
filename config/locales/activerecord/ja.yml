@@ -15,6 +15,7 @@ ja:
         price: '値段'
         spf: 'SPF'
         pa: "PA"
+        summary: '商品説明'
       user:
         role: '役割'
         age: '年齢'

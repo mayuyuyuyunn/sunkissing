@@ -3,7 +3,6 @@ class SchedulesController < ApplicationController
   
   def new
     @schedule = current_user.schedules.new
-    @odekake_types = OdekakeType.all
   end
 
   def create
@@ -16,9 +15,22 @@ class SchedulesController < ApplicationController
   end
 
   def edit
+    @schedule = current_user.schedules.find_by(leave_home_time: Date.today.all_day)
   end
 
   def update
+    @schedule = current_user.schedules.find(params[:id])
+    # もっといい書き方あるけどとりあえず
+    leave_home_hour = params[:schedule]["leave_home_time(4i)"]
+    leave_home_minute = params[:schedule]["leave_home_time(5i)"]
+    leave_home_time = Time.parse("#{leave_home_hour}:#{leave_home_minute}")
+    @schedule.leave_home_time = leave_home_time
+    if @schedule.update(schedule_params)
+      redirect_to root_path
+    else
+      @schedule = current_user.schedules.find_by(leave_home_time: Date.today.all_day)
+      render :edit
+    end
   end
 
   def destroy
