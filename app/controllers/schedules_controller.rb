@@ -36,6 +36,9 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy!
+    redirect_to root_path, success: "スケジュールの削除に成功しました" 
   end
 
   def show
