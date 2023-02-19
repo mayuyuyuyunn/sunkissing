@@ -1,14 +1,39 @@
-<h1>トップページ</h1>
 
-<p>ログインしているユーザーのID<%= session[:user_id] %></p>
-<% if logged_in? %>
-  <%= link_to "プロフィール詳細へ", user_path(current_user.id), class: "btn btn-warning" %>
-  <%= link_to '日焼け止め一覧へ', sunscreens_path, class:"btn btn-accent" %>
-  <% if current_user.schedules.schedule_at_today.present? %>
-    <%= link_to "スケジュール詳細へ", schedule_path(current_user.schedules.schedule_at_today.first), class: "btn danger "%>
-  <% else %>
-    <%= link_to "スケジュール登録へ", new_schedule_path, class: "btn danger" %>
-  <% end %>
-<% else %>
-  <%= link_to '日焼け止め一覧へ', sunscreens_path, class:"btn btn-accent" %>
-<% end %>
+<div class="section bg-gray-50">
+
+  <div class="hero">
+    <div class="hero-content text-center px-5 py-12">
+      <div class="max-w-md">
+        <h1 class="text-4xl font-bold">日焼け対策、毎日</br>"しっかり"していますか？</h1>
+        <p class="pt-6">朝家を出る前にしっかり塗った日焼け止め、</br>そのままにしていませんか？</p>
+        <p class="pt-6">日焼け対策に重要なのは日焼け止めの塗り直しです。</p>
+        <p class="py-6">Sunkissingは、</br>日焼け止めの塗り直しを忘れないように、</br>あなたのその日の予定に合わせてLINE通知をお届けします。</p>
+        <div>
+
+        </div>
+        <button class="btn btn-ghost mb-5">LINE登録はこちら（画像に切り替え予定）</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card_explain">
+    <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+      <div class="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
+        <div class="p-6 border border-2 bg-gradient-to-r from-cyan-50 to-blue-100">
+          <div class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto mb-5 text-blue-600 rounded-full bg-blue-50">
+          </div>
+          <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">日焼け止めは毎日塗るべき？</h1>
+          <p class="mx-auto text-base leading-relaxed text-gray-500">→365日季節問わず毎日塗るべきです！！</p>
+          <%= render 'shared/modal' %>
+        <div class="p-6 border bg-gradient-to-r from-orange-200 to-yellow-50">
+          <div class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto mb-5 text-blue-600 rounded-full bg-blue-50">
+          </div>
+          <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">塗り直しってそんなに大事なの？</h1>
+          <p class="mx-auto text-base leading-relaxed text-gray-500">→塗り直しが非常に重要です！</p>
+          <%= render 'shared/modal2' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
