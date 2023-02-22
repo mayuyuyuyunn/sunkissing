@@ -15,13 +15,17 @@
         <% if logged_in? %>
           <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li><%= link_to 'プロフィール編集', edit_users_url %></li>
-            <li><%= link_to 'スケジュール登録', new_schedule_path %></li>
+            <% if current_user.schedules.schedule_at_today.present? %>
+              <li><%= button_to '本日のスケジュール削除', schedule_path(current_user.schedules.schedule_at_today.first), method: :delete %></li>
+            <% else %>
+              <li><%= link_to '本日のスケジュール登録', new_schedule_path %></li>
+            <% end %>
             <li><a>日焼け止めを探す（準備中）</a></li>
             <li><a>今日の紫外線情報（準備中）</a></li>
           </ul>
         <% else %>
           <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>ログイン</a></li>
+            <li><a>LINE登録・ログイン</a></li>
             <li><a>日焼け止めを探す（準備中）</a></li>
             <li><a>今日の紫外線情報（準備中）</a></li>
           </ul>
