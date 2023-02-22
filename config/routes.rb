@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/guide', to: 'static_pages#guide'
   get '/after_login', to: 'static_pages#after_login'
   # ユーザー登録・ログイン周り
-  resources :users, only: %i[new create edit update show]
+  resource :users, only: %i[edit update]
+  resources :users, only: %i[new create]
+
   # 日焼け止め
   resources :sunscreens, only: %i[index show]
   # タグ

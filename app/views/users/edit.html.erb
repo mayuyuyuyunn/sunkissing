@@ -3,7 +3,7 @@
     <h1 class="text-3xl font-bold text-center mb-4">プロフィール編集</h1>
     <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
       <div class="card-body text-center">
-        <%= form_with model: @user, url: user_path, local: true do |f| %>
+        <%= form_with model: @user, url: users_path, local: true do |f| %>
           <div class="form-control w-full">
             <div class='font-bold'>
               <%= f.label :gender %>
