@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_today_schedule
-    @schedule = current_user.schedules.find_by(leave_home_time: Date.today.all_day)
+    if logged_in?
+      @schedule = current_user.schedules.find_by(leave_home_time: Date.today.all_day)
+    else
+      true
+    end
   end
 end
