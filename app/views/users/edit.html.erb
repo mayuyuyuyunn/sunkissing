@@ -1,19 +1,36 @@
-<%= form_with model: @user, url: user_path, local: true do |f| %>
-  <div class="form-control w-full max-w-xs">
-  <%= f.label :gender %>
-  <%= f.select :gender, User.genders_i18n.invert {} %>
+<div class="hero min-h-screen bg-gray-50">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto border border-indigo-600'>
+    <h1 class="text-3xl font-bold text-center mb-4">プロフィール編集</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center">
+        <%= form_with model: @user, url: user_path, local: true do |f| %>
+          <div class="form-control w-full">
+            <div class='font-bold'>
+              <%= f.label :gender %>
+            </div>
+            <%= f.select :gender, User.genders_i18n.invert {} %>
+          </div>
+          <div class="form-control w-full">
+            <div class='font-bold'>
+              <%= f.label :skin_type %>
+            </div>
+          <%= f.select :skin_type, User.skin_types_i18n.invert {} %>
+          </div>
+          <div class="form-control w-full">
+            <div class='font-bold'>
+              <%= f.label :prefecture %>
+            </div>
+            <%= f.select :prefecture, User.prefectures_i18n.invert {} %>
+          </div>
+          <div class="form-control w-full">
+            <div class='font-bold'>
+              <%= f.label :age %>
+            </div>
+            <%= f.select :age, User.ages_i18n.invert {} %>
+          </div>
+          <%= f.submit class: 'btn btn-wide w-full mt-8' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="form-control w-full max-w-xs">
-  <%= f.label :skin_type %>
-  <%= f.select :skin_type, User.skin_types_i18n.invert {} %>
-  </div>
-  <div class="form-control w-full max-w-xs">
-  <%= f.label :prefecture %>
-  <%= f.select :prefecture, User.prefectures_i18n.invert {} %>
-  </div>
-  <div class="form-control w-full max-w-xs">
-  <%= f.label :age %>
-  <%= f.select :age, User.ages_i18n.invert {} %>
-  </div>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+</div>

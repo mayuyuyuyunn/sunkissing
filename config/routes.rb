@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/terms', to: 'static_pages#terms'
   get '/privacy_policy', to: 'static_pages#privacy_policy'
   get '/guide', to: 'static_pages#guide'
+  get '/after_login', to: 'static_pages#after_login'
   # ユーザー登録・ログイン周り
   resources :users, only: %i[new create edit update show]
   # 日焼け止め

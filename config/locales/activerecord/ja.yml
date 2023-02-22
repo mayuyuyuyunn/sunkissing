@@ -23,5 +23,5 @@ ja:
         skin_type: '肌質'
         prefecture: '都道府県'
       schedule:
-        leave_home_time: '家を出る時間'
+        leave_home_time: 'お家を出る時間'
         odekake_type_id: 'お出かけタイプ'
