@@ -1,12 +1,31 @@
-<%= form_with model: @schedule, local: true do |f| %>
-  <div class="form-control w-full max-w-xs">
-  <%= f.label :odekake_type_id %>
-  <%= f.select :odekake_type_id, OdekakeType.all.map { |x| [x.name, x.id] }%>
+<div class="hero min-h-screen bg-gray-50">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto border border-indigo-600'>
+    <h1 class="text-3xl font-bold text-center mb-4">スケジュール登録</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center">
+        <%= form_with model: @schedule, local: true do |f| %>
+          <div class="form-control w-full">
+            <div class='font-bold'>
+              <%= f.label :odekake_type_id %>
+            </div>
+            <p class="text-xs pb-2">※今日の予定にいちばん近いものを選んでください</p>
+            <%= f.select :odekake_type_id, OdekakeType.all.map { |x| [x.name, x.id] }%>
+          </div>
+          <div class="form-control w-full">
+            <div class='font-bold pt-2'>
+              <%= f.label :leave_home_time %>
+            </div>
+            <p class="text-xs pb-2">※外出しない場合は</br>日焼け止めを塗った時間を入力してください！</p>
+            <%= f.time_select :leave_home_time, {start_hour: 5, end_hour: 12, minute_step: 30} %>
+          </div>
+          <div>
+            <%= f.submit class: 'btn btn-wide w-full mt-8' %>
+          </div>
+        <% end %>    
+      </div>
+    </div>
   </div>
-  <div class="form-control w-full max-w-xs">
-    <%= f.label :leave_home_time %>
-    <%= f.time_select :leave_home_time %>
-  </div>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+</div>
+
+
 

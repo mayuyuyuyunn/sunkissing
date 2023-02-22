@@ -13,13 +13,17 @@
         </div>
       </label>
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a>ログイン中のユーザー:<%= session[:user_id] %></a></li>
+        <li><%= link_to 'プロフィール編集', edit_user_path(current_user) %></li>
         <li>
-          <a class="justify-between">
-            LINEログイン
-          </a>
+          <% if current_user.schedules.schedule_at_today.present? %>
+            <%= button_to 'スケジュール削除', schedule_path(@schedule), method: :delete %>
+          <% else %>
+            <%= link_to 'スケジュール登録', new_schedule_path %>
+          <% end %>
         </li>
-        <li><a>日焼け止めを探す</a></li>
-        <li><a>クイックガイド</a></li>
+        <li><a>今日のUVI情報(準備中)</a></li>
+        <li><a>日焼け止め検索(準備中)</a></li>
       </ul>
     </div>
   </div>

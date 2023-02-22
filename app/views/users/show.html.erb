@@ -1,8 +1,18 @@
-<h2>ユーザー詳細</h2>
-<p><%=  User.human_attribute_name(:gender) %>:<%= current_user.skin_type_i18n %></p>
-<p><%=  User.human_attribute_name(:age) %>:<%= current_user.age_i18n %></p>
-<p><%=  User.human_attribute_name(:skin_type) %>:<%= current_user.skin_type_i18n %></p>
-<p><%=  User.human_attribute_name(:prefecture) %>:<%= current_user.prefecture %></p>
-<%= link_to "ユーザー編集へ", edit_user_path(current_user), class: "btn btn-warning" %>
-<%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-warning" %>
+<div class="hero min-h-screen bg-gray-50">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto border border-indigo-600'>
+    <h1 class="text-3xl font-bold text-center mb-4">ユーザー詳細</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center">
+        <p><%=  User.human_attribute_name(:gender) %>:<%= current_user.skin_type_i18n %></p>
+        <p><%=  User.human_attribute_name(:age) %>:<%= current_user.age_i18n %></p>
+        <p><%=  User.human_attribute_name(:skin_type) %>:<%= current_user.skin_type_i18n %></p>
+        <p><%=  User.human_attribute_name(:prefecture) %>:<%= current_user.prefecture %></p>
+        <div class='btn'>
+          <%= link_to 'プロフィール編集', edit_user_path(@current_user.id) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
