@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/privacy_policy', to: 'static_pages#privacy_policy'
   get '/guide', to: 'static_pages#guide'
   get '/after_login', to: 'static_pages#after_login'
+
+  post 'callback' => 'line_bot#callback'
+
   # ユーザー登録・ログイン周り
   resource :users, only: %i[edit update]
   resources :users, only: %i[new create]
