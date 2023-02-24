@@ -23,7 +23,7 @@ namespace :sunscreen_remind_task do
         end
       else
         if (time.hour == schedule.leave_home_time.hour + 3) || (time.hour == schedule.leave_home_time.hour + 6) || (time.hour == schedule.leave_home_time.hour + 9)
-          line_user_id =zschedule.user.line_user_id
+          line_user_id = schedule.user.line_user_id
           message = { type: 'text',
                       text: remind.message  }
           stamp = { type: 'sticker',
