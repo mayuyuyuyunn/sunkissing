@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
     if @schedule.save
       redirect_to root_path, success: "スケジュールの登録が完了しました"
     else
-      flash.now[:error] = スケジュールの登録に失敗しました
+      flash.now[:error] = "スケジュールの登録に失敗しました"
       render :new
     end
   end

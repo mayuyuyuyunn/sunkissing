@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :login_required
   helper_method :logged_in?
-  before_action :set_today_schedule
 
   private
 
@@ -16,13 +15,5 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !current_user.nil?
-  end
-
-  def set_today_schedule
-    if logged_in?
-      @schedule = current_user.schedules.find_by(leave_home_time: Date.today.all_day)
-    else
-      true
-    end
   end
 end
