@@ -1,4 +1,10 @@
 desc "日焼け止めの塗り直し通知を送る(Heroku)"
+
+task :test_scheduler => :environment do
+  puts "scheduler test"
+  puts "it works."
+end
+
 task :send_remind_line => :environment do
   check_type = ['炎天下でのレジャー・マリンスポーツなど', '非常に強い紫外線の場所に行く・紫外線に過敏な方']
   schedules = Schedule.schedule_at_today
