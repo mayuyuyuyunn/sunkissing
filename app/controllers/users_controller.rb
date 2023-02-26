@@ -4,7 +4,11 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: %i[edit update show]
 
-  def new; end
+  def new
+    if current_user
+      redirect_to after_login_path
+    end
+  end
 
   def create
     id_token = params[:idToken]
