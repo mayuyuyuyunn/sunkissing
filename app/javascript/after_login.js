@@ -1,3 +1,4 @@
+console.log('after_login');
 document.getElementById("line_login").onclick = function() {
   // csrf-tokenを取得
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');

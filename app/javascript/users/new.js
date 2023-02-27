@@ -1,4 +1,4 @@
-console.log("custom as application")
+console.log("users/new")
 document.addEventListener('DOMContentLoaded', () => {
   // csrf-tokenを取得
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
