@@ -2,3 +2,4 @@
 <p>本日のお出かけタイプ：<%= @schedule.odekake_type.name %></p>
 <p>本日のお家出発時間：<%= l @schedule.leave_home_time, format: :short %></p>
 <%= button_to "スケジュール削除へ", schedule_path(params[:id]), method: :delete, class: "btn btn-warning" %>
+<%= javascript_include_tag "after_login", "data-turbo-track": "reload", defer: true %>
