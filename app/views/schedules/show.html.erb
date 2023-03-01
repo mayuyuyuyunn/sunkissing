@@ -1,5 +1,21 @@
-<h2>スケジュール</h2>
-<p>本日のお出かけタイプ：<%= @schedule.odekake_type.name %></p>
-<p>本日のお家出発時間：<%= l @schedule.leave_home_time, format: :short %></p>
-<%= button_to "スケジュール削除へ", schedule_path(params[:id]), method: :delete, class: "btn btn-warning" %>
+<div class="hero min-h-screen">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-200'>
+    <h1 class="text-3xl font-bold text-center mb-4">本日のスケジュール詳細</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center">
+        <div>
+          <p class="font-bold"><お出かけタイプ></p>
+          <p class=''><%= @schedule.odekake_type.name %></p>
+        </div>
+        <div>
+          <p class="font-bold"><お家出発時間></p>
+          <p><%= l @schedule.leave_home_time, format: :short %>時台</p>
+        </div>
+        
+      </div>
+    </div>
+    <%#= link_to 'スケジュール編集へ', edit_schedule_path(params[:id]), class: "btn btn-wide w-full mt-8"%>
+    <%= button_to "スケジュール削除", schedule_path(params[:id]), method: :delete, class: "btn mb-5 btn-wide w-full mt-8 bg-orange-400 hover:bg-orange-300 text-black border-0" %>
+  </div>
+</div>
 <%= javascript_include_tag "after_login", "data-turbo-track": "reload", defer: true %>
