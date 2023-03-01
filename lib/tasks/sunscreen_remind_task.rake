@@ -4,6 +4,7 @@ namespace :sunscreen_remind_task do
     check_type = ['炎天下でのレジャー・マリンスポーツなど', '非常に強い紫外線の場所に行く・紫外線に過敏な方']
     schedules = Schedule.schedule_at_today
     time = Time.now
+    return false if time.hour.between?(17, 23)
     client = Line::Bot::Client.new { |config|
             config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
             config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
