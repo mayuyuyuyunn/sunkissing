@@ -15,7 +15,9 @@
       </div>
     </div>
     <%#= link_to 'スケジュール編集へ', edit_schedule_path(params[:id]), class: "btn btn-wide w-full mt-8"%>
-    <%= button_to "スケジュール削除", schedule_path(params[:id]), method: :delete, class: "btn mb-5 btn-wide w-full mt-8 bg-orange-400 hover:bg-orange-300 text-black border-0" %>
+    <div class="btn btn-wide w-full bg-orange-400 hover:bg-orange-500 text-black border-0">
+      <%= button_to "スケジュール削除", schedule_path(params[:id]), method: :delete %>
+    </div>
   </div>
 </div>
 <%= javascript_include_tag "after_login", "data-turbo-track": "reload", defer: true %>
