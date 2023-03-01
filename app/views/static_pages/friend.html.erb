@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-theme="cmyk">
+  <head>
+    <title><%= page_title(yield(:title)) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar bg-gradient-to-r from-cyan-100 to-blue-300">
+      <div class="flex-1">
+        <%= link_to 'Sunkissing', friend_path, class: "btn btn-ghost normal-case text-xl" %>
+      </div>
+    </header>
+    <div class="section bg-gray-50">
+      
+        <div class="hero">
+          <div class="hero-content text-center px-5 py-12">
+            <div class="max-w-md">
+              <h1 class="text-4xl font-bold mb-5">日焼け対策、毎日</br>"しっかり"していますか？</h1>
+              <p class="pt-6">朝家を出る前にしっかり塗った日焼け止め、</br>そのままにしていませんか？</p>
+              <p class="pt-6">日焼け対策に重要なのは日焼け止めの塗り直しです。</p>
+              <p class="py-6">Sunkissingは、</br>日焼け止めの塗り直しを忘れないように、</br>あなたのその日の予定に合わせてLINE通知をお届けします。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero">
+          <div class="hero-content text-center px-5 py-12">
+            <div class="max-w-md">
+              <h1 class="text-4xl font-bold mb-5">(使い方)</h1>
+              <p class="text-2xl font-bold">LINEで通知が来る</br>チャンネルをお友達追加</p>
+              <p class="text-xs pb-2">（※スマートフォンで開くと、自動でLINEの画面が開くので便利です！）</p>
+              <p class="text-4xl font-bold pb-2">↓</p>
+              <p class="text-2xl font-bold">トーク画面に</br>初期設定の案内が来るので設定</p>
+              <p class="text-xs pb-2">（※LINEでのユーザー登録・プロフィール編集をしていただきます！）</p>
+              <p class="text-4xl font-bold pb-2">↓</p>
+              <p class="text-2xl font-bold mb-5">その日のスケジュールを登録！</p>
+              <div class="btn btn-ghost mb-5 border-slate-500 border-dotted">
+                <%= link_to '⭐️まずは、LINEでお友達追加⭐️', 'https://line.me/R/ti/p/@508snqhw' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card_explain">
+          <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+            <div class="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
+              <div class="p-6 border border-2 bg-gradient-to-r from-cyan-50 to-blue-100">
+                <div class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto mb-5 text-blue-600 rounded-full bg-blue-50">
+                </div>
+                <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">日焼け止めは毎日塗るべき？</h1>
+                <p class="mx-auto text-base leading-relaxed text-gray-500">→365日季節問わず毎日塗るべきです！！</p>
+                <%= render 'shared/modal' %>
+              <div class="p-6 border bg-gradient-to-r from-orange-200 to-yellow-50">
+                <div class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto mb-5 text-blue-600 rounded-full bg-blue-50">
+                </div>
+                <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">塗り直しってそんなに大事なの？</h1>
+                <p class="mx-auto text-base leading-relaxed text-gray-500">→塗り直しが非常に重要です！</p>
+                <%= render 'shared/modal2' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero bg-gray-50">
+          <div class="hero-content text-center px-5 py-12">
+            <div class="max-w-md">
+              <div class="btn btn-ghost mb-5 border-slate-500 border-dotted">
+                <%= link_to '⭐️まずは、LINEでお友達追加⭐️', 'https://line.me/R/ti/p/@508snqhw' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%= render 'shared/footer' %>
+  </body>
+</html>

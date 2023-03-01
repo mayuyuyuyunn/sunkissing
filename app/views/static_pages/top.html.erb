@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html data-theme="cmyk">
-  <head>
-    <title><%= page_title(yield(:title)) %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "top", "data-turbo-track": "reload", defer: true %>
-  </head>
 
-  <body>
-    <%= render 'shared/header' %>
-    <%= render 'shared/flash_message' %>
       <div class="section bg-gray-50">
       
         <div class="hero">
           <div class="hero-content text-center px-5 py-12">
             <div class="max-w-md">
-              <h1 class="text-4xl font-bold">日焼け対策、毎日</br>"しっかり"していますか？</h1>
+              <h1 class="text-4xl font-bold mb-5">日焼け対策、毎日</br>"しっかり"していますか？</h1>
               <p class="pt-6">朝家を出る前にしっかり塗った日焼け止め、</br>そのままにしていませんか？</p>
               <p class="pt-6">日焼け対策に重要なのは日焼け止めの塗り直しです。</p>
-              <p class="py-6">Sunkissingは、</br>日焼け止めの塗り直しを忘れないように、</br>あなたのその日の予定に合わせてLINE通知をお届けします。</p>
-              <div class="btn btn-ghost mb-5">
-                <%= link_to 'LINE登録・ログインはこちら（画像に切り替え予定）', new_user_path %>
+              <p class="py-6 mb-5">Sunkissingは、</br>日焼け止めの塗り直しを忘れないように、</br>あなたのその日の予定に合わせてLINE通知をお届けします。</p>
+              <div class="btn btn-ghost mb-5 border-slate-500 border-dotted">
+                <%= link_to '⭐️（LINE）ユーザー登録・ログイン⭐️', new_user_path %>
               </div>
             </div>
           </div>
@@ -48,8 +35,13 @@
           </div>
         </div>
       </div>
-    <%= render 'shared/footer' %>
-    <%#　LIFF　SDK読み込み %>
-    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  </body>
-</html>
+
+      <div class="hero bg-gray-50">
+        <div class="hero-content text-center px-5 py-12">
+          <div class="max-w-md">
+            <div class="btn btn-ghost mb-5 border-slate-500 border-dotted">
+              <%= link_to '⭐️（LINE）ユーザー登録・ログイン⭐️', new_user_path %>
+            </div>
+          </div>
+        </div>
+      </div>

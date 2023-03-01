@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/privacy_policy', to: 'static_pages#privacy_policy'
   get '/guide', to: 'static_pages#guide'
   get '/after_login', to: 'static_pages#after_login'
+  get '/friend', to: 'static_pages#friend'
 
   post 'callback' => 'line_bot#callback'
 

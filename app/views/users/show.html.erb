@@ -7,7 +7,7 @@
         <p><%=  User.human_attribute_name(:age) %>:<%= current_user.age_i18n %></p>
         <p><%=  User.human_attribute_name(:skin_type) %>:<%= current_user.skin_type_i18n %></p>
         <p><%=  User.human_attribute_name(:prefecture) %>:<%= current_user.prefecture %></p>
-        <div class='btn'>
+        <div class='btn btn-wide bg-pink-300 hover:bg-pink-400 text-black border-0 w-full mt-8'>
           <%= link_to 'プロフィール編集', edit_users_path %>
         </div>
       </div>

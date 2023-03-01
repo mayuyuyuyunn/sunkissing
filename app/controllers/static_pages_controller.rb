@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   def top
-    render layout: false
+    if !current_user.nil?
+      render :after_login
+    end
   end
 
   def privacy_policy
@@ -13,5 +15,9 @@ class StaticPagesController < ApplicationController
   end
 
   def after_login
+  end
+
+  def friend
+    render layout: false
   end
 end
