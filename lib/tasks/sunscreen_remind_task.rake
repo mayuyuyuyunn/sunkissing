@@ -8,12 +8,14 @@ namespace :sunscreen_remind_task do
             config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
             config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
         }
-    puts 'LINEのクライアント'
-    puts client
     remind = Remind.new
     schedules.each do |schedule|
+      puts 'LINEのクライアント'
+      puts client
       puts 'スケジュール'
-      puts schedule
+      p schedule
+      puts '何時に家出た？'
+      p schedule.leave_home_time.hour
       puts '今何時'
       puts time.hour
       puts '2時間おきに送る？'
