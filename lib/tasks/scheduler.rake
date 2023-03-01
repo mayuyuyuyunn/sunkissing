@@ -27,6 +27,7 @@ task :send_remind_line => :environment do
         message = { type: 'text',
                     text: '日焼け止めの塗り直し時間です！(3)'  }
         client.push_message(line_user_id, message)
+        puts 'aaa'
       end
     end
   end

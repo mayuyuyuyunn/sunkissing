@@ -8,8 +8,19 @@ namespace :sunscreen_remind_task do
             config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
             config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
         }
+    puts 'LINEのクライアント'
+    puts client
     remind = Remind.new
     schedules.each do |schedule|
+      puts 'スケジュール'
+      puts schedule
+      puts '今何時'
+      puts time.hour
+      puts '2時間おきに送る？'
+      puts check_type.include?(schedule.odekake_type.name)
+      puts  (time.hour == schedule.leave_home_time.hour + 2) || (time.hour == schedule.leave_home_time.hour + 4) || (time.hour == schedule.leave_home_time.hour + 6) || (time.hour == schedule.leave_home_time.hour + 8) || (time.hour == schedule.leave_home_time.hour + 10)
+      puts '3時間おきに送る？'
+      puts (time.hour == schedule.leave_home_time.hour + 3) || (time.hour == schedule.leave_home_time.hour + 6) || (time.hour == schedule.leave_home_time.hour + 9)
       if check_type.include?(schedule.odekake_type.name)
         if (time.hour == schedule.leave_home_time.hour + 2) || (time.hour == schedule.leave_home_time.hour + 4) || (time.hour == schedule.leave_home_time.hour + 6) || (time.hour == schedule.leave_home_time.hour + 8) || (time.hour == schedule.leave_home_time.hour + 10)
           line_user_id = schedule.user.line_user_id
