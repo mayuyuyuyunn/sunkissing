@@ -8,7 +8,8 @@ class SchedulesController < ApplicationController
   def create
     @schedule = current_user.schedules.build(schedule_params)
     if @schedule.save
-      redirect_to root_path, success: "スケジュールの登録が完了しました"
+      flash[:success] = "スケジュールを登録しました！"
+      redirect_to schedule_path(@schedule.id)
     else
       flash.now[:error] = "スケジュールの登録に失敗しました"
       render :new
@@ -27,7 +28,8 @@ class SchedulesController < ApplicationController
     leave_home_time = Time.parse("#{leave_home_hour}:#{leave_home_minute}")
     @schedule.leave_home_time = leave_home_time
     if @schedule.update(schedule_params)
-      redirect_to root_path, success: "スケジュールの編集が完了しました"
+      flash[:success] = "スケジュールを編集しました！"
+      redirect_to root_path
     else
       flash.now[:error] = "スケジュールの編集に失敗しました"
       @schedule = current_user.schedules.find_by(leave_home_time: Date.today.all_day)
@@ -38,7 +40,8 @@ class SchedulesController < ApplicationController
   def destroy
     @schedule = Schedule.find(params[:id])
     @schedule.destroy!
-    redirect_to root_path, success: "スケジュールの削除に成功しました" 
+    flash[:success] = "スケジュールを削除しました！"
+    redirect_to root_path
   end
 
   def show

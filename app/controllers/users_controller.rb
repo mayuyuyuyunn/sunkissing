@@ -33,9 +33,11 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to after_login_path
+      flash[:success] = "プロフィールの登録をしました！"
+      redirect_to root_path
     else
       render :edit
+      flash.now[:error] = "プロフィールの登録に失敗しました"
     end
   end
 
