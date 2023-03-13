@@ -59,6 +59,9 @@ gem 'enum_help'
 # LINE API
 gem 'line-bot-api'
 
+# カレンダーgem
+gem "simple_calendar", "~> 2.4"
+
 # DBのスキーム表示
 gem 'annotate'
 
