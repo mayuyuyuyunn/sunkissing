@@ -20,4 +20,8 @@ class StaticPagesController < ApplicationController
   def friend
     render layout: false
   end
+
+  def calendar
+    @schedules = current_user.schedules
+  end
 end

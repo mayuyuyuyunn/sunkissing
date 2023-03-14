@@ -1,0 +1,48 @@
+<div class="container mx-auto mt-10 mb-20 text-accent-content">
+	<div class="flex flex-justify-between overflow-auto border border-stone-100">
+    <div class="flex flex-col flex-grow">
+      <div class="flex items-center border-b border-stone-100 py-4 pl-4">
+        <div>
+          <%= link_to calendar.url_for_previous_view do %>
+            <<
+          <% end %>
+          <span class="mx-2 text-xl font-bold leading-none">
+            <%= start_date.year %>年<%= t('date.month_names')[start_date.month] %>
+          </span>
+          <%= link_to calendar.url_for_next_view do %>
+            >>
+          <% end %>
+        </div>
+      </div>
+        <table class="table-fixed w-full pb-30 rounded-lg bg-white">
+          <thead>
+            <tr class="border-b border-stone-100">
+              <% date_range.slice(0, 7).each do |day| %>
+                <th class="p-2 h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                  <span class="xl:block lg:block md:block sm:block">
+                    <%= t('date.abbr_day_names')[day.wday] %>
+                  </span>
+                </th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <% date_range.each_slice(7) do |week| %>
+              <tr class="lg:w-40 md:w-30 w-20 lg:h-40 md:h-30 h-20 xl:text-sm text-xs text-start">
+                <% week.each do |day| %>
+                  <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+                    <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
+                      <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
+                    <% else %>
+                      <% passed_block.call day, sorted_events.fetch(day, []) %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
