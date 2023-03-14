@@ -17,12 +17,14 @@
             <% if current_user.schedules.schedule_at_today.present? %>
               <li><%= link_to '本日のスケジュール', schedule_path(current_user.schedules.schedule_at_today.first) %></li>
               <li><%= link_to 'プロフィール編集', edit_users_url %></li>
+              <li><%= link_to 'カレンダー', calendar_url %></li>
               <li><%= link_to 'トップページ', root_path %></li>
               <li><%= link_to 'トーク画面に戻る', 'https://line.me/R/ti/p/@508snqhw' %></li>
               <li><%= link_to 'お問い合わせフォーム', 'https://forms.gle/ZKB8NeLTPFi5Qy6m8' %></li>
             <% else %>
               <li><%= link_to '本日のスケジュール登録', new_schedule_path %></li>
               <li><%= link_to 'プロフィール編集', edit_users_url %></li>
+              <li><%= link_to 'カレンダー', calendar_url %></li>
               <li><%= link_to 'トップページ', root_path %></li>
               <li><%= link_to 'トーク画面に戻る', 'https://line.me/R/ti/p/@508snqhw' %></li>
               <li><%= link_to 'お問い合わせフォーム', 'https://forms.gle/ZKB8NeLTPFi5Qy6m8' %></li>

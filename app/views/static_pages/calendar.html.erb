@@ -1,0 +1,31 @@
+<div class="py-6 md:py-8">
+  <div class="max-w-screen-xl px-6 md:px-10 mx-auto">
+    <div class="mb-10 md:mb-16 text-center">
+      <h2 class="text-3xl font-bold mb-5">カレンダー</h2>
+      <p>日焼け対策は日々の積み重ねが大事！</p>
+      <p>日焼け止めを毎朝塗ってアプリに登録して習慣にしましょう</p>
+      <p>スケジュール登録をした日にちに太陽マークがつきます</p>
+      <p class="text-2xl font-bold mt-10"><%= Date.today.month %>月頑張った日数</p>
+      <div class="text-2xl font-bold">
+        ☀️
+        <%= current_user.schedules.where(leave_home_time: Date.today.in_time_zone.all_month).count %>
+        日
+        ☀️
+      </div>
+      <p class="text-2xl font-bold mt-10">今まで頑張った日数</p>
+      <div class="text-2xl font-bold">
+        ☀️
+        <%= current_user.schedules.count %>
+        日☀️
+      </div>
+      <%= month_calendar partial: 'simple_calendar/month_calendar', events: @schedules do |date, schedules| %>
+        <%= date.to_s.slice(8, 2) %>
+        <div class="m-auto lg:w-30 md:w-24 w-10 lg:h-30 md:h-24 h-10">
+          <% if schedules.present? %>
+            <%= image_tag 'sun.png' %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
