@@ -12,15 +12,15 @@ Rails.application.routes.draw do
   post 'callback' => 'line_bot#callback'
 
   # ユーザー登録・ログイン周り
-  resource :users, only: %i[edit update]
-  resources :users, only: %i[new create]
-
+  resource :user, only: %i[new create edit update]
   # 日焼け止め
   resources :sunscreens, only: %i[index show]
   # タグ
   resources :tags, only: %i[index show]
   # スケジュール
   resources :schedules, only: %i[new create edit update destroy show]
+  # 天気予報
+  resource :weather_forecast, only: %i[show]
   # admin
   namespace :admin do
     resources :sunscreens
