@@ -9,6 +9,7 @@ require 'json'
     url = "https://api.openweathermap.org/data/3.0/onecall?lat=#{latitude}&lon=#{longitude}&exclude=minutely,alerts&appid=#{api_key}"
     response = Net::HTTP.get_response(URI(url))
     data = JSON.parse(response.body)
+    @current_uvi = data['current']['uvi']
     @daily_uvi = data["daily"][0]["uvi"]
     case @daily_uvi
     when 0..3.9999
