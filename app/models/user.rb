@@ -26,7 +26,7 @@ class User < ApplicationRecord
   validates :line_user_id, presence: true, uniqueness: true
   validates :age, presence: true
   validates :gender, presence: true
-  validates :prefecture, presence: true
+  validates :prefecture_id, presence: true
   validates :skin_type, presence: true
   
   enum role: { general: 0, admin: 1 }

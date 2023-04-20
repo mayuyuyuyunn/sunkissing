@@ -1,4 +1,4 @@
-console.log("users/new")
+console.log("/new")
 document.addEventListener('DOMContentLoaded', () => {
   // csrf-tokenを取得
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const idToken = liff.getIDToken()
     console.log(idToken)
     const body =`idToken=${idToken}`
-    const request = new Request('/users', {
+    const request = new Request('/user', {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         'X-CSRF-Token': token
