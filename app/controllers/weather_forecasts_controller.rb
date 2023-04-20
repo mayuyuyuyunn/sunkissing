@@ -4,8 +4,10 @@ require 'json'
 
   def show
     api_key = ENV['WEATHER_API_KEY']
-    latitude = "35.681236"
-    longitude = "139.767125"
+    # 書き方正しくない気がする
+    @prefecture = Prefecture.find(current_user.prefecture_id)
+    latitude = @prefecture.latitude
+    longitude = @prefecture.longitude
     url = "https://api.openweathermap.org/data/3.0/onecall?lat=#{latitude}&lon=#{longitude}&exclude=minutely,alerts&appid=#{api_key}"
     response = Net::HTTP.get_response(URI(url))
     data = JSON.parse(response.body)

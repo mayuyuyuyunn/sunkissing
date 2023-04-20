@@ -18,9 +18,9 @@
           </div>
           <div class="form-control w-full">
             <div class='font-bold'>
-              <%= f.label :prefecture %>
+              <%= f.label :prefecture_id %>
             </div>
-            <%= f.select :prefecture, User.prefectures_i18n.invert {} %>
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
           </div>
           <div class="form-control w-full mb-5">
             <div class='font-bold'>
