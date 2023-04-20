@@ -5,7 +5,6 @@
 #  id           :bigint           not null, primary key
 #  age          :integer          default("age_not_selected"), not null
 #  gender       :integer          default("gender_not_selected"), not null
-#  prefecture   :integer          default("その他"), not null
 #  role         :integer          default("general"), not null
 #  skin_type    :integer          default("normal"), not null
 #  created_at   :datetime         not null
