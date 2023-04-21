@@ -2,23 +2,14 @@
 #
 # Table name: users
 #
-#  id            :bigint           not null, primary key
-#  age           :integer          default("age_not_selected"), not null
-#  gender        :integer          default("gender_not_selected"), not null
-#  role          :integer          default("general"), not null
-#  skin_type     :integer          default("normal"), not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  line_user_id  :string           not null
-#  prefecture_id :bigint           default(48), not null
-#
-# Indexes
-#
-#  index_users_on_prefecture_id  (prefecture_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (prefecture_id => prefectures.id)
+#  id           :bigint           not null, primary key
+#  age          :integer          default("age_not_selected"), not null
+#  gender       :integer          default("gender_not_selected"), not null
+#  role         :integer          default("general"), not null
+#  skin_type    :integer          default("normal"), not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  line_user_id :string           not null
 #
 class User < ApplicationRecord
   has_many :schedules, dependent: :destroy
@@ -26,7 +17,6 @@ class User < ApplicationRecord
   validates :line_user_id, presence: true, uniqueness: true
   validates :age, presence: true
   validates :gender, presence: true
-  validates :prefecture_id, presence: true
   validates :skin_type, presence: true
   
   enum role: { general: 0, admin: 1 }
