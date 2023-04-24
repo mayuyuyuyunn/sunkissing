@@ -9,6 +9,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <!-- OGP設定でSEO対策のために追加 -->
     <%= display_meta_tags(default_meta_tags) %>
+    <!-- faviconの設定 -->
+    <%= favicon_link_tag('favicon.ico') %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR4RERRHDW"></script>
     <script>
