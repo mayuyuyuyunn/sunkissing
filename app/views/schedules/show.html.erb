@@ -1,3 +1,4 @@
+<% content_for(:title, 'スケジュール') %>
 <div class="hero min-h-screen">
   <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-200'>
     <h1 class="text-3xl font-bold text-center mb-4">本日のスケジュール詳細</h1>
@@ -18,7 +19,6 @@
         <%= button_to "スケジュール削除", schedule_path(params[:id]), method: :delete %>
       </div>
     </div>
-    <%#= link_to 'スケジュール編集へ', edit_schedule_path(params[:id]), class: "btn btn-wide w-full mt-8"%>
   </div>
 </div>
 <%= javascript_include_tag "after_login", "data-turbo-track": "reload", defer: true %>
