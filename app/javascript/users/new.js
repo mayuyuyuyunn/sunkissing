@@ -1,4 +1,3 @@
-console.log("/new")
 document.addEventListener('DOMContentLoaded', () => {
   // csrf-tokenを取得
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   liff.ready.then(() => {
     const idToken = liff.getIDToken()
-    console.log(idToken)
     const body =`idToken=${idToken}`
     const request = new Request('/user', {
       headers: {
