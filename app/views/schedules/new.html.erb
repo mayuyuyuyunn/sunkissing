@@ -21,10 +21,9 @@
             <%= f.time_select :leave_home_time, {start_hour: 5, end_hour: 13, minute_step: 60} %>
             時台に出発！🚘
             </div>
-            <%#= select_hour Time.now(), {start_hour: 5, end_hour: 12, include_blank: true} %>
           </div>
-          <div class="btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4">
-            <%= f.submit %>
+          <div class="link">
+            <%= f.submit class: 'class="btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4'%>
           </div>
         <% end %>    
       </div>
