@@ -1,9 +1,16 @@
-<% @sunscreens.each do |s| %>
+<% @sunscreens.each do |sunscreen| %>
   <div class="card shadow bg-base-100 mb-3 mt-5">
     <div class="card-body">
-      <h2 class="card-title text-1xl font-bold"><%= s.name %></h2>
-      <p><%= s.spf %></p>
-      <p><%= s.pa %></p>
+      <h2 class="card-title text-1xl font-bold"><%= sunscreen.name %></h2>
+      <p>SPF:<%= sunscreen.spf_i18n %></p>
+      <p>PA:<%= sunscreen.pa_i18n %></p>
+      <p>値段:<%= sunscreen.price %>円</p>
+      <p>タグ:
+        <% sunscreen.tags.each do |tag| %>
+          <%= tag.name %>
+        <% end %>
+      </p>
     </div>
+    <%= link_to "日焼け止め詳細へ", sunscreen_path(sunscreen.id), class: "btn bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
   </div>
 <% end %>
