@@ -1,52 +1,7 @@
-<div class="w-full overflow-x-hidden border-t flex flex-col">
-  <div class="main w-full flex-grow p-6">
-    <div class="bg-white overflow-auto">
-      <div class="w-full mt-12">
-        <table class="table min-w-full bg-white">
-          <thead>
-            <tr>
-              <th>名称</th>
-              <th>SPF</th>
-              <th>PA</th>
-              <th>価格</th>
-              <th>メーカー</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- row 1 -->
-            <% @sunscreens.each do |sunscreen| %>
-            <tr>
-              <div class="flex items-center space-x-3">
-                <td>
-                  <div class="text-sm opacity-50"><%= sunscreen.name %></div>
-                </td>
-                <td>
-                  <%= sunscreen.spf %>
-                </td>
-                <td>
-                  <%= sunscreen.pa %>
-                </td>
-                <td>
-                  <%= sunscreen.price %><p>円</p>
-                </td>
-                <td>
-                  <%= sunscreen.manufacture %>
-                </td>
-              </div>
-            </tr>
-            <% end %>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th>名称</th>
-              <th>SPF</th>
-              <th>PA</th>
-              <th>価格</th>
-              <th>メーカー</th>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
+<% content_for(:title, '日焼け止め') %>
+<div class="hero min-h-screen bg-gray-50">
+  <h1 class="text-3xl font-bold text-center">日焼け止め</h1>
+  <div class="w-screenmax-w-sm sm:max-w-lg px-5 py-12 border-2 border-indigo-200">
+    <%= render 'sunscreens' %>
   </div>
 </div>

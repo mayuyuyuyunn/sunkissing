@@ -1,0 +1,9 @@
+<% @sunscreens.each do |s| %>
+  <div class="card shadow bg-base-100 mb-3 mt-5">
+    <div class="card-body">
+      <h2 class="card-title text-1xl font-bold"><%= s.name %></h2>
+      <p><%= s.spf %></p>
+      <p><%= s.pa %></p>
+    </div>
+  </div>
+<% end %>
