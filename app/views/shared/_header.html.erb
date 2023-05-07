@@ -28,13 +28,13 @@
               <li><%= link_to 'トップページ', root_path %></li>
               <li><%= link_to 'トーク画面に戻る', 'https://line.me/R/ti/p/@508snqhw' %></li>
             <% end %>
-              <li><a>日焼け止めを探す（準備中）</a></li>
+              <li><%= link_to '日焼け止めを探す', sunscreens_path %></li>
           </ul>
         <% else %>
           <ul tabindex="0" class="menu menu-normal dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li><%= link_to 'お友達登録・トーク画面', 'https://line.me/R/ti/p/@508snqhw' %></li>
             <li><%= link_to 'ユーザー登録・ログイン', new_user_path %></li>
-            <li><a>日焼け止めを探す（準備中）</a></li>
+            <li><%= link_to '日焼け止めを探す', sunscreens_path %>j</li>
           </ul>
         <% end %>
       </div>

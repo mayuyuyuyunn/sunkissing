@@ -1,14 +1,41 @@
-<p><%=  Sunscreen.human_attribute_name(:name) %>:<%= @sunscreen.name %></p>
-<p><%=  Sunscreen.human_attribute_name(:manufacture) %>:<%= @sunscreen.manufacture %></p>
-<p><%=  Sunscreen.human_attribute_name(:brand) %>:<%= @sunscreen.brand %></p>
-<p><%=  Sunscreen.human_attribute_name(:price) %>:<%= @sunscreen.price %>円</p>
-<p><%=  Sunscreen.human_attribute_name(:capacity) %>:<%= @sunscreen.capacity %>g</p>
-<p>1gあたりの価格:<%= @sunscreen.price / @sunscreen.capacity %>円</p>
-<p><%=  Sunscreen.human_attribute_name(:spf) %>:<%= @sunscreen.spf_i18n %></p>
-<p><%=  Sunscreen.human_attribute_name(:pa) %>:<%= @sunscreen.pa_i18n %></p>
-<p><%=  Sunscreen.human_attribute_name(:summary) %>:<%= @sunscreen.summary %></p>
-<p><%= Tag.model_name.human %>:
-<% @sunscreen.tags.each do |tag| %>
-  <%= tag.name %>
-<% end %></p>
-<%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-warning" %>
+<% content_for(:title, '日焼け止め詳細') %>
+<div class="hero min-h-screen bg-gray-50">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-300'>
+    <h1 class="text-3xl font-bold text-center mb-4">
+      <%= @sunscreen.name %>
+    </h1>
+    <p class="font-bold mb-4 mt-4 text-center">
+      <%=  Sunscreen.human_attribute_name(:manufacture) %>:<%= @sunscreen.manufacture %>
+    </p>
+    <p class="font-bold mb-4 text-center">
+      <%=  Sunscreen.human_attribute_name(:brand) %>:<%= @sunscreen.brand %>
+    </p>
+    <p class="font-bold mb-4 text-center">
+      <%=  Sunscreen.human_attribute_name(:price) %>:<%= @sunscreen.price %>円
+    </p>
+    <p class="font-bold mb-4 text-center">
+      <%=  Sunscreen.human_attribute_name(:capacity) %>:<%= @sunscreen.capacity %>g
+    </p>
+    <p class="font-bold mb-4 text-center">
+      1gあたりの価格:<%= @sunscreen.price / @sunscreen.capacity %>円
+    </p>
+    <p class="font-bold mb-4 text-center">
+      <%=  Sunscreen.human_attribute_name(:spf) %>:<%= @sunscreen.spf_i18n %>
+    </p>
+    <p class="font-bold mb-4 text-center">
+      <%=  Sunscreen.human_attribute_name(:pa) %>:<%= @sunscreen.pa_i18n %>
+    </p>
+    <p class="font-bold mb-4 text-center">
+      <%=  Sunscreen.human_attribute_name(:summary) %>:<%= @sunscreen.summary %>
+    </p>
+    <p class="font-bold mb-4 text-center">
+      <%= Tag.model_name.human %>:
+      <% @sunscreen.tags.each do |tag| %>
+        <%= tag.name %>
+      <% end %>
+    </p>
+    <div class="link text-center">
+      <%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
+    </div>
+  </div>
+</div>

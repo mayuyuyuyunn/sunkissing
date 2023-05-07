@@ -27,6 +27,7 @@ ja:
     sunscreen:
       spf:
         spf_unknown: '不明'
+        fifteen: '15'
         thirty: '30'
         forty: '40'
         fifty: '50'
