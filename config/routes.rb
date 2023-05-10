@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   resource :user, only: %i[new create edit update]
   resources :users, only: %i[create new]
   # 日焼け止め
+  resources :sunscreens do
+    collection do
+      get 'search'
+    end
+  end
   resources :sunscreens, only: %i[index show]
   # タグ
   resources :tags, only: %i[index show]
