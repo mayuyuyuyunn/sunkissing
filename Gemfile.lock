@@ -229,6 +229,10 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    ransack (4.0.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     regexp_parser (2.6.1)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -350,6 +354,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rails-i18n
   rails_best_practices (~> 1.23, >= 1.23.2)
+  ransack
   rspec-rails
   rubocop
   rubocop-performance
