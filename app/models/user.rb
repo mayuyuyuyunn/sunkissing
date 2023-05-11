@@ -22,6 +22,7 @@
 #
 class User < ApplicationRecord
   has_many :schedules, dependent: :destroy
+  belongs_to :prefecture
 
   validates :line_user_id, presence: true, uniqueness: true
   validates :age, presence: true

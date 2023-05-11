@@ -11,6 +11,8 @@
 #  updated_at   :datetime         not null
 #
 class Prefecture < ApplicationRecord
+  has_one :user
+
   with_options presence: true do
     validates :capital_city
     validates :latitude
