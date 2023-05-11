@@ -2,10 +2,12 @@ class WeatherForecastsController < ApplicationController
 require 'net/http'
 require 'json'
 
+before_action :set_q, only: [:show]
+
   def show
     api_key = ENV['WEATHER_API_KEY']
     # 書き方正しくない気がする
-    @prefecture = Prefecture.find(current_user.prefecture_id)
+    @prefecture = current_user.prefecture
     latitude = @prefecture.latitude
     longitude = @prefecture.longitude
     url = "https://api.openweathermap.org/data/3.0/onecall?lat=#{latitude}&lon=#{longitude}&exclude=minutely,alerts&appid=#{api_key}"
@@ -17,6 +19,7 @@ require 'json'
     when 0..3.9999
       @recommended_sunscreen = "SPF15程度の肌に優しい日焼け止め"
       @message = "あまり紫外線がないため、#{@recommended_sunscreen}を使用することをお勧めします！UVI指数が低い日もしっかりケアしていきましょう⭐️"
+      @q.result(distinct: true).where("spf <= ?", 15)
     when 4..5.9999
       @recommended_sunscreen = "SPF30以上の日焼け止め"
       @message = "中程度の数値です。外出時は#{@recommended_sunscreen}を使用することをおすすめします！"
@@ -31,4 +34,11 @@ require 'json'
       @message = "危険なレベルの紫外線があります・・・。#{@recommended_sunscreen}がおすすめです。可能であれば、外出を控えてください。短時間に限定してください。帽子や長袖の服を着用して日傘とサングラスもマストです。肌をできるだけ保護してください！"
     end
   end
+
+  private
+
+  def set_q
+    @q = Sunscreen.ransack(params[:q])
+  end
+
 end
