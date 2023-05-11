@@ -17,6 +17,7 @@ require 'json'
     when 0..3.9999
       @recommended_sunscreen = "SPF15程度の肌に優しい日焼け止め"
       @message = "あまり紫外線がないため、#{@recommended_sunscreen}を使用することをお勧めします！UVI指数が低い日もしっかりケアしていきましょう⭐️"
+      @q.result(distinct: true).where("spf <= ?", 15)
     when 4..5.9999
       @recommended_sunscreen = "SPF30以上の日焼け止め"
       @message = "中程度の数値です。外出時は#{@recommended_sunscreen}を使用することをおすすめします！"

@@ -1,17 +1,19 @@
 <% content_for(:title, '日焼け止め') %>
 <div class='hero bg-gray-50'>
-<div class="card shadow bg-base-100 mb-3 mt-5">
+<div class="card shadow bg-base-100 mt-5 mb-5">
     <div class="card-body">
       <div class="form w-full max-w-xs">
         <%= search_form_for @q, url: search_sunscreens_path do |f| %>
           <%= f.label :spf_eq, 'SPF', class: "font-bold" %>
-          <%= f.select :spf_eq, Sunscreen.spfs_i18n.invert.map{|key, value| [key, Sunscreen.spfs[value]]}, { include_blank: "指定なし" }, class: "" %>
+          <br>
+          <%= f.select :spf_eq, Sunscreen.spfs_i18n.invert.map{|key, value| [key, Sunscreen.spfs[value]]}, { include_blank: "指定なし" }, class: "select select-accent select-lg w-full max-w-xs" %>
           <br>
           <%= f.label :pa_eq, 'PA', class: "font-bold" %>
-          <%= f.select :pa_eq, Sunscreen.pas_i18n.invert.map{|key, value| [key, Sunscreen.pas[value]]}, { include_blank: "指定なし" }, class: "" %>
           <br>
-          <div class="link">
-            <%= f.submit '検索', class: "btn" %>
+          <%= f.select :pa_eq, Sunscreen.pas_i18n.invert.map{|key, value| [key, Sunscreen.pas[value]]}, { include_blank: "指定なし" }, class: "select select-accent select-lg w-full max-w-xs" %>
+          <br>
+          <div class="link pt-2">
+            <%= f.submit '検索', class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
           </div>
         <% end %>
       </div>
