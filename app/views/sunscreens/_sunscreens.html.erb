@@ -7,12 +7,14 @@
       <p>値段:<%= sunscreen.price %>円</p>
       <p>タグ:
         <% sunscreen.tags.each do |tag| %>
-          <%= tag.name %>
+          <span class="badge badge-warning gap-2">
+            <%= link_to tag.name, search_sunscreens_path(tag_id: tag.id) %>
+          </span>
         <% end %>
       </p>
     </div>
-    <div class='link text-center'>
-      <%= link_to "日焼け止め詳細へ", sunscreen_path(sunscreen.id), class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
+    <div class='link text-center mb-5'>
+      <%= link_to "日焼け止め詳細へ", sunscreen_path(sunscreen.id), class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-5" %>
     </div>
   </div>
 <% end %>

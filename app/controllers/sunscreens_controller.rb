@@ -10,7 +10,12 @@ class SunscreensController < ApplicationController
   end
   
   def search
-    @results = @q.result
+    if params[:tag_id].present?
+      @tag = Tag.find(params[:tag_id])
+      @results = @tag.sunscreens.all
+    else
+      @results = @q.result
+    end
   end
 
   private
@@ -18,4 +23,5 @@ class SunscreensController < ApplicationController
   def set_q
     @q = Sunscreen.ransack(params[:q])
   end
+
 end
