@@ -7,7 +7,7 @@
       <p>値段:<%= sunscreen.price %>円</p>
       <p>タグ:
         <% sunscreen.tags.each do |tag| %>
-          <%= tag.name %>
+          <span class="badge badge-warning gap-2"><%= tag.name %></span>
         <% end %>
       </p>
     </div>
