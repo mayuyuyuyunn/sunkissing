@@ -6,7 +6,11 @@
       <div class="card-body text-center">
         <div>
           <p class="font-bold">都道府県</p>
-          <p class="text-xs pb-2">※表示する地域はプロフィール編集から変更可能です</p>
+          <% if current_user.nil? %>
+            <p class="text-xs pb-2">※表示する地域はユーザー登録後変更可能です！</p>
+          <% else %>
+            <p class="text-xs pb-2">※表示する地域はプロフィール編集から変更可能です</p>
+          <% end %>
           <div class="font-bold">
             <%= @prefecture.name %>
           </div>

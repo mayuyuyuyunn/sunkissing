@@ -1,7 +1,9 @@
 class StaticPagesController < ApplicationController
   def top
-    if !current_user.nil?
+    if current_user
       render :after_login
+    else
+      render :before_login
     end
   end
 
@@ -17,8 +19,10 @@ class StaticPagesController < ApplicationController
   def after_login
   end
 
+  def before_login
+  end
+
   def friend
-    render layout: false
   end
 
   def calendar

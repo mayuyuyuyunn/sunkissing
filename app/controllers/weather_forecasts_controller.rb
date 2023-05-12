@@ -6,10 +6,15 @@ before_action :set_q, only: [:show]
 
   def show
     api_key = ENV['WEATHER_API_KEY']
-    # 書き方正しくない気がする
-    @prefecture = current_user.prefecture
-    latitude = @prefecture.latitude
-    longitude = @prefecture.longitude
+    if current_user.nil?
+      @prefecture = Prefecture.find_by(name: '未選択')
+      latitude = @prefecture.latitude
+      longitude = @prefecture.longitude
+    else
+      @prefecture = current_user.prefecture
+      latitude = @prefecture.latitude
+      longitude = @prefecture.longitude
+    end
     url = "https://api.openweathermap.org/data/3.0/onecall?lat=#{latitude}&lon=#{longitude}&exclude=minutely,alerts&appid=#{api_key}"
     response = Net::HTTP.get_response(URI(url))
     data = JSON.parse(response.body)
