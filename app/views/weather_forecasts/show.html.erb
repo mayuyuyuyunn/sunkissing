@@ -31,7 +31,17 @@
           <%= @message %>
         </div>
         <div>
-          <%= link_to '🔍今日にぴったりの日焼け止めを見る', sunscreens_path %>
+          <form class="sunscreen_search" id="sunscreen_search" action="/sunscreens/search" accept-charset="UTF-8" method="get" data-gtm-form-interact-id="0">
+            <div class="form-control w-full">
+              <div class="font-bold">
+                <label hidden class="font-bold" for="q_spf_eq">SPF</label>
+              </div>
+            <input type="hidden" name="q[spf_eq]" id="q_spf_eq" value="<%= @value %>">
+            </div>
+            <div class="link">
+              <input type="submit" name="commit" value="🔍今日にぴったりの日焼け止めを探す" class="btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" data-disable-with="🔍今日にぴったりの日焼け止めを探す">
+            </div>
+          </form>
         </div>
       </div>
     </div>
