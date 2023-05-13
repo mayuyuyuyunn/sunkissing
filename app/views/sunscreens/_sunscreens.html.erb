@@ -7,7 +7,7 @@
       <p>値段:<%= sunscreen.price %>円</p>
       <p>タグ:
         <% sunscreen.tags.each do |tag| %>
-          <span class="badge badge-warning gap-2">
+          <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
             <%= link_to tag.name, search_sunscreens_path(tag_id: tag.id) %>
           </span>
         <% end %>

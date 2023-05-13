@@ -6,7 +6,11 @@
       <div class="card-body text-center">
         <div>
           <p class="font-bold">都道府県</p>
-          <p class="text-xs pb-2">※表示する地域はプロフィール編集から変更可能です</p>
+          <% if current_user.nil? %>
+            <p class="text-xs pb-2">※表示する地域はユーザー登録後変更可能です！</p>
+          <% else %>
+            <p class="text-xs pb-2">※表示する地域はプロフィール編集から変更可能です</p>
+          <% end %>
           <div class="font-bold">
             <%= @prefecture.name %>
           </div>
@@ -27,7 +31,17 @@
           <%= @message %>
         </div>
         <div>
-          <%= link_to '🔍今日にぴったりの日焼け止めを見る', sunscreens_path %>
+        <%= form_with model: @q, url: search_sunscreens_path, method: "get" do |f| %>
+          <div class="form-control w-full">
+            <div class="font-bold">
+              <%= f.label :spf_eq, "SPF", hidden: true, class: "font-bold" %>
+            </div>
+            <%= f.hidden_field :spf_eq, value: @value, id: "q_spf_eq" %>
+          </div>
+          <div class="link">
+            <%= f.submit "🔍今日にぴったりの日焼け止めを探す", class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4", "data-disable-with": "🔍今日にぴったりの日焼け止めを探す" %>
+          </div>
+        <% end %>
         </div>
       </div>
     </div>
