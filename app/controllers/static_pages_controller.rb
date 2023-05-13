@@ -1,9 +1,9 @@
 class StaticPagesController < ApplicationController
   def top
-    if current_user
-      render :after_login
-    else
+    if current_user.nil?
       render :before_login
+    else
+      render :after_login
     end
   end
 
