@@ -30,11 +30,11 @@
           <div class="card-body">
             <h2 class="card-title text-1xl font-bold"><%= sunscreen.name %></h2>
             <div class="hero min-screen">
-              <%= raw @sunscreen.rakuten_image_url %>
+              <%= raw sunscreen.rakuten_image_url %>
             </div>
             <p>SPF:<%= sunscreen.spf_i18n %></p>
             <p>PA:<%= sunscreen.pa_i18n %></p>
-            <p>値段:<%= sunscreen.price %>円</p>
+            <p>参考価格:<%= sunscreen.price %>円</p>
             <p>タグ:
               <% sunscreen.tags.each do |tag| %>
                 <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-sky-600 bg-sky-200 uppercase last:mr-0 mr-1">

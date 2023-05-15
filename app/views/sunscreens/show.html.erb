@@ -1,49 +1,53 @@
 <% content_for(:title, '日焼け止め詳細') %>
 <div class="hero min-h-screen bg-gray-50">
   <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-300'>
-    <h1 class="text-3xl font-bold text-center mb-4">
-      <%= @sunscreen.name %>
-    </h1>
-    <div class="hero min-screen">
-        <%= raw @sunscreen.rakuten_image_url %>
-    </div>
-    <p class="font-bold mb-4 mt-4 text-center">
-      <%=  Sunscreen.human_attribute_name(:manufacture) %>:<%= @sunscreen.manufacture %>
-    </p>
-    <p class="font-bold mb-4 text-center">
-      <%=  Sunscreen.human_attribute_name(:brand) %>:<%= @sunscreen.brand %>
-    </p>
-    <p class="font-bold mb-4 text-center">
-      <%=  Sunscreen.human_attribute_name(:price) %>:<%= @sunscreen.price %>円
-    </p>
-    <p class="font-bold mb-4 text-center">
-      <%=  Sunscreen.human_attribute_name(:capacity) %>:<%= @sunscreen.capacity %>g
-    </p>
-    <p class="font-bold mb-4 text-center">
-      1gあたりの価格:<%= @sunscreen.price / @sunscreen.capacity %>円
-    </p>
-    <p class="font-bold mb-4 text-center">
-      <%=  Sunscreen.human_attribute_name(:spf) %>:<%= @sunscreen.spf_i18n %>
-    </p>
-    <p class="font-bold mb-4 text-center">
-      <%=  Sunscreen.human_attribute_name(:pa) %>:<%= @sunscreen.pa_i18n %>
-    </p>
-    <p class="font-bold mb-4 text-center">
-      <%=  Sunscreen.human_attribute_name(:summary) %>:<%= @sunscreen.summary %>
-    </p>
-    <p class="font-bold mb-4 text-center">
-      <%= Tag.model_name.human %>:
-        <% @sunscreen.tags.each do |tag| %>
-          <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-sky-600 bg-sky-200 uppercase last:mr-0 mr-1">
-            <%= link_to tag.name, search_sunscreens_path(tag_id: tag.id) %>
-          </span>
-        <% end %>
-    </p>
-    <div class="link text-center mt-5">
-      <%= link_to '⭐️楽天で購入する⭐️', url_for(@sunscreen.rakuten_url), class: "purupuru btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>
-    </div>
-    <div class="link text-center pt-5">
-      <%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
+    <div class="card shadow mt-5 mb-5 bg-base-100 mx-auto">
+      <div class="card-body text-center bt-3">
+        <h1 class="text-3xl font-bold text-center mb-4">
+          <%= @sunscreen.name %>
+        </h1>
+        <div class="hero min-screen">
+          <%= raw @sunscreen.rakuten_image_url %>
+        </div>
+        <p class="font-bold mb-2 mt-4 text-center">
+          <%=  Sunscreen.human_attribute_name(:manufacture) %>:<%= @sunscreen.manufacture %>
+        </p>
+        <p class="font-bold mb-2 text-center">
+          <%=  Sunscreen.human_attribute_name(:brand) %>:<%= @sunscreen.brand %>
+        </p>
+        <p class="font-bold mb-2 text-center">
+        <%=  Sunscreen.human_attribute_name(:price) %>:<%= @sunscreen.price %>円
+        </p>
+        <p class="font-bold mb-2 text-center">
+          <%=  Sunscreen.human_attribute_name(:capacity) %>:<%= @sunscreen.capacity %>g
+        </p>
+        <p class="font-bold mb-2 text-center">
+          1gあたりの価格:<%= @sunscreen.price / @sunscreen.capacity %>円
+        </p>
+        <p class="font-bold mb-2 text-center">
+          <%=  Sunscreen.human_attribute_name(:spf) %>:<%= @sunscreen.spf_i18n %>
+        </p>
+        <p class="font-bold mb-4 text-center">
+          <%=  Sunscreen.human_attribute_name(:pa) %>:<%= @sunscreen.pa_i18n %>
+        </p>
+        <p class="font-bold mb-4 text-center">
+          <%=  Sunscreen.human_attribute_name(:summary) %>:<%= @sunscreen.summary %>
+        </p>
+        <p class="font-bold mb-4 text-center">
+          <%= Tag.model_name.human %>:
+            <% @sunscreen.tags.each do |tag| %>
+              <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-sky-600 bg-sky-200 uppercase last:mr-0 mr-1">
+                <%= link_to tag.name, search_sunscreens_path(tag_id: tag.id) %>
+              </span>
+            <% end %>
+        </p>
+        <div class="link text-center mt-5">
+          <%= link_to '⭐️楽天で購入する⭐️', url_for(@sunscreen.rakuten_url), class: "purupuru btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>
+        </div>
+        <div class="link text-center pt-5">
+          <%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
