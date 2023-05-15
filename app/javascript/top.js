@@ -1,1 +1,1 @@
-console.log('top page');
+console.log('top');
