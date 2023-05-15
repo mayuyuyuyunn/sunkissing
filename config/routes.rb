@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # 静的ページ
   get '/terms', to: 'static_pages#terms'
   get '/privacy_policy', to: 'static_pages#privacy_policy'
-  get '/guide', to: 'static_pages#guide'
   get '/after_login', to: 'static_pages#after_login'
   get '/friend', to: 'static_pages#friend'
   get '/calendar', to: 'static_pages#calendar'

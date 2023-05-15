@@ -13,9 +13,6 @@ class StaticPagesController < ApplicationController
   def terms
   end
 
-  def guide
-  end
-
   def after_login
   end
 
