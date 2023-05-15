@@ -12,7 +12,7 @@ ja:
         manufacture: 'メーカー'
         brand: 'ブランド'
         capacity: '容量'
-        price: '値段'
+        price: '参考価格'
         spf: 'SPF'
         pa: "PA"
         summary: '商品説明'
