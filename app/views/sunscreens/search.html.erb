@@ -29,6 +29,9 @@
         <div class="card shadow bg-base-100 mb-3 mt-5">
           <div class="card-body">
             <h2 class="card-title text-1xl font-bold"><%= sunscreen.name %></h2>
+            <div class="hero min-screen">
+              <%= raw @sunscreen.rakuten_image_url %>
+            </div>
             <p>SPF:<%= sunscreen.spf_i18n %></p>
             <p>PA:<%= sunscreen.pa_i18n %></p>
             <p>値段:<%= sunscreen.price %>円</p>
