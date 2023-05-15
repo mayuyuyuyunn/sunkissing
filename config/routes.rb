@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   # タグ
   resources :tags, only: %i[index show]
   # スケジュール
-  resources :schedules, only: %i[new create edit update destroy show]
+  resources :schedules, only: %i[new create destroy show]
   # 天気予報
   resource :weather_forecast, only: %i[show]
   # admin
