@@ -17,14 +17,14 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
-    @schedule = Schedule.find(params[:id])
+    @schedule = current_user.schedules.find(params[:id])
     @schedule.destroy!
     flash[:success] = "スケジュールを削除しました！"
     redirect_to root_path
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
+    @schedule = current_user.schedules.find(params[:id])
   end
 
   private
