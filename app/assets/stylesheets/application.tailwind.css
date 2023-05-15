@@ -45,3 +45,15 @@
     @apply cursor-pointer hover:bg-stone-100 active:bg-stone-200;
   }
 }
+
+  .purupuru {
+  animation: purupuru 0.1s infinite;
+  }
+  @keyframes purupuru {
+    0% {
+        transform: translate(0px, 0px)
+    }
+    50% {
+        transform: translate(0px, 1px) rotateZ(1deg)
+    }
+  }
