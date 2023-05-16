@@ -15,20 +15,20 @@
         <% if logged_in? %>
           <ul tabindex="0" class="menu menu-normal dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li><%= link_to '紫外線情報', weather_forecast_path %></li>
+            <li><%= link_to '日焼け止めを探す', sunscreens_path %></li>
             <% if current_user.schedules.schedule_at_today.present? %>
+              <li><%= link_to 'カレンダー', calendar_url %></li>
               <li><%= link_to '本日のスケジュール', schedule_path(current_user.schedules.schedule_at_today.first) %></li>
               <li><%= link_to 'プロフィール編集', edit_user_url %></li>
-              <li><%= link_to 'カレンダー', calendar_url %></li>
               <li><%= link_to 'トップページ', root_path %></li>
               <li><%= link_to 'トーク画面に戻る', 'https://line.me/R/ti/p/@508snqhw' %></li>
             <% else %>
+              <li><%= link_to 'カレンダー', calendar_url %></li>
               <li><%= link_to 'スケジュール登録', new_schedule_path %></li>
               <li><%= link_to 'プロフィール編集', edit_user_url %></li>
-              <li><%= link_to 'カレンダー', calendar_url %></li>
               <li><%= link_to 'トップページ', root_path %></li>
               <li><%= link_to 'トーク画面に戻る', 'https://line.me/R/ti/p/@508snqhw' %></li>
             <% end %>
-              <li><%= link_to '日焼け止めを探す', sunscreens_path %></li>
           </ul>
         <% else %>
           <ul tabindex="0" class="menu menu-normal dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
