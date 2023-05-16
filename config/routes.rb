@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # 静的ページ
   get '/terms', to: 'static_pages#terms'
   get '/privacy_policy', to: 'static_pages#privacy_policy'
-  get '/guide', to: 'static_pages#guide'
   get '/after_login', to: 'static_pages#after_login'
   get '/friend', to: 'static_pages#friend'
   get '/calendar', to: 'static_pages#calendar'
@@ -24,7 +23,7 @@ Rails.application.routes.draw do
   # タグ
   resources :tags, only: %i[index show]
   # スケジュール
-  resources :schedules, only: %i[new create edit update destroy show]
+  resources :schedules, only: %i[new create destroy show]
   # 天気予報
   resource :weather_forecast, only: %i[show]
   # admin

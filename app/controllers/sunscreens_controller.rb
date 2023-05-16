@@ -12,9 +12,9 @@ class SunscreensController < ApplicationController
   def search
     if params[:tag_id].present?
       @tag = Tag.find(params[:tag_id])
-      @results = @tag.sunscreens.all
+      @results = @tag.sunscreens.all.order(price: :asc)
     else
-      @results = @q.result
+      @results = @q.result.order(price: :asc)
     end
   end
 

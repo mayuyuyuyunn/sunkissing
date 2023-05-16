@@ -30,10 +30,13 @@
         <p class="font-bold mb-4 text-center">
           <%=  Sunscreen.human_attribute_name(:pa) %>:<%= @sunscreen.pa_i18n %>
         </p>
-        <p class="font-bold mb-4 text-center">
-          <%=  Sunscreen.human_attribute_name(:summary) %>:<%= @sunscreen.summary %>
+        <p class="font-bold text-center">
+          <%=  Sunscreen.human_attribute_name(:summary) %>:
         </p>
-        <p class="font-bold mb-4 text-center">
+        <p class="font-bold text-center">
+          <%= @sunscreen.summary%>
+        </p>
+        <p class="text-xs font-bold mb-4 text-center">
           <%= Tag.model_name.human %>:
             <% @sunscreen.tags.each do |tag| %>
               <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-sky-600 bg-sky-200 uppercase last:mr-0 mr-1">
