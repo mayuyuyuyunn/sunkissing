@@ -1,22 +1,5 @@
-class Admin::UsersController < ApplicationController
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-  def show
-  end
-
+class Admin::UsersController < Admin::applicationController
   def index
+    @users = User.all
   end
 end

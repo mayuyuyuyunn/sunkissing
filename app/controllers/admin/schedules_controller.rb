@@ -1,22 +1,5 @@
-class Admin::SchedulesController < ApplicationController
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-  def show
-  end
-
+class Admin::SchedulesController < Admin::applicationController
   def index
+    @schedules = Schedule.all
   end
 end
