@@ -6,7 +6,7 @@ class SunscreensController < ApplicationController
   end
 
   def index
-    @sunscreens = Sunscreen.all
+    @sunscreens = Sunscreen.all.order(price: :asc)
   end
   
   def search
