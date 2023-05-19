@@ -1,2 +1,21 @@
-h1 Admin::Tags#new
-p Find me in app/views/admin/tags/new.html.slim
+<div class="hero min-h-screen bg-gray-50">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-300'>
+    <h1 class="text-3xl font-bold text-center mb-4">タグ登録</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center bt-3">
+        <%= form_with model: @tag, url: admin_tags_path, local: true do |f| %>
+          <div class="form-control w-full">
+          <div class="form-control w-full">
+            <div class='font-bold'>
+              <%= f.label :name %>
+            </div>
+            <%= f.text_field :name %>
+          </div>
+          <div class="link">
+            <%= f.submit class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
