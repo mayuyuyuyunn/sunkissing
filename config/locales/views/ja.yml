@@ -38,3 +38,13 @@ ja:
         plus2: '++'
         plus3: '+++'
         plus4: '++++'
+  defaults:
+    message:
+      require_login: 'ログインしてください'
+      register: '登録する'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした" 
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'

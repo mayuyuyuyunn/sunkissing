@@ -28,10 +28,12 @@ Rails.application.routes.draw do
   resource :weather_forecast, only: %i[show]
   # admin
   namespace :admin do
+    root 'dashboards#index'
     resources :sunscreens
     resources :users
     resources :tags
     resources :schedules
     resources :odekake_types
+    resources :dashboards
   end
 end
