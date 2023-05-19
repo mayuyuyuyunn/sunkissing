@@ -1,2 +1,22 @@
-h1 Admin::OdekakeTypes#edit
-p Find me in app/views/admin/odekake_types/edit.html.slim
+<div class="hero min-h-screen bg-gray-50">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-300'>
+    <h1 class="text-3xl font-bold text-center mb-4">お出かけタイプ編集</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center bt-3">
+        <%= form_with model: @odekake_type, url: admin_odekake_type_path(@odekake_type), local: true do |f| %>
+          <div class="form-control w-full">
+          <div class="form-control w-full">
+          <p class="text-2xl font-bold">ID: <%= @odekake_type.id %></p>
+            <div class='font-bold'>
+              <%= f.label :name %>
+            </div>
+            <%= f.text_area :name %>
+          </div>
+          <div class="link">
+            <%= f.submit class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

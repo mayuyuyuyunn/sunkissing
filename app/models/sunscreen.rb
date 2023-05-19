@@ -40,6 +40,6 @@ class Sunscreen < ApplicationRecord
   private 
   
   def self.ransackable_attributes(auth_object = nil)
-    ["brand", "capacity", "manufacture", "name", "pa", "price", "spf"]
+    ["brand", "capacity", "manufacture", "name", "pa", "price", "spf", "rakuten_url", "rakuten_image_url"]
   end
 end

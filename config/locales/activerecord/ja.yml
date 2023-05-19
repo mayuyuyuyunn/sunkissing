@@ -16,6 +16,8 @@ ja:
         spf: 'SPF'
         pa: "PA"
         summary: '商品説明'
+        rakuten_url: '楽天URL'
+        rakuten_image_url: '商品画像'
       user:
         role: '役割'
         age: '年齢'
