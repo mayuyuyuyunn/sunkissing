@@ -1,2 +1,45 @@
-h1 Admin::Users#index
-p Find me in app/views/admin/users/index.html.slim
+<h1 class="text-3xl text-black pb-6">ユーザー</h1>
+  <div class="w-full mt-12">
+    <p class="text-xl pb-3 flex items-center">データ件数: <%= @users.count %></p>
+<div class="w-full mt-12">
+  <p class="text-xl pb-3 flex items-center">
+    <i class="fas fa-list mr-3"></i>
+    All Users
+  </p>
+  <div class="bg-white overflow-auto">
+    <table class="min-w-full bg-white">
+      <thead class="bg-gray-800 text-white">
+        <tr>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">role</th>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">age</th>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">skin_typeh</th>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">btn</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+      <% @users.each_with_index do |user, i|  %>
+        <% color_class = 'bg-gray-200' if i.odd? %>
+        <tr class="<%= color_class %>">
+          <td class="w-1/3 text-left py-3 px-4">
+            <%= user.id %>
+          </td>
+          <td class="w-1/3 text-left py-3 px-4">
+            <%= user.role_i18n %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= user.age_i18n %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= user.skin_type_i18n %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= link_to "詳細", admin_user_path(user), class: "btn" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

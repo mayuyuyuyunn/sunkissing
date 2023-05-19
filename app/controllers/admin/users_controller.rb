@@ -1,5 +1,21 @@
-class Admin::UsersController < Admin::applicationController
+class Admin::UsersController < Admin::ApplicationController
+  before_action :set_user, only: %i[show destroy]
+
   def index
     @users = User.all
   end
+
+  def show; end
+
+  def destroy
+    @user.destroy!
+    redirect_to admin_users_path, success: t('defaults.message.deleted', item: User.model_name.human)
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 end
