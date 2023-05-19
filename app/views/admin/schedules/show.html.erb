@@ -1,2 +1,23 @@
-h1 Admin::Schedules#show
-p Find me in app/views/admin/schedules/show.html.slim
+<% content_for(:title, 'スケジュール') %>
+<div class="hero min-h-screen">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-200'>
+    <h1 class="text-3xl font-bold text-center mb-4">スケジュール詳細</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center">
+        <div>
+          <p class="font-bold"><お出かけタイプ></p>
+          <p class=''><%= @schedule.odekake_type.name %></p>
+        </div>
+        <div>
+          <p class="font-bold"><お家出発時間></p>
+          <p><%= l @schedule.leave_home_time, format: :short %>時台🚘</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="link">
+        <%= button_to "スケジュール削除", admin_schedule_path(params[:id]), method: :delete, class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
+      </div>
+    </div>
+  </div>
+</div>
