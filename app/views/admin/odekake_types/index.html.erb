@@ -1,2 +1,42 @@
-h1 Admin::OdekakeTypes#index
-p Find me in app/views/admin/odekake_types/index.html.slim
+<h1 class="text-3xl text-black pb-6">お出かけタイプ</h1>
+<%= link_to 'お出かけタイプ登録', new_admin_odekake_type_path, class: 'btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4' %>
+  <div class="w-full mt-12">
+    <p class="text-xl pb-3 flex items-center">データ件数: <%= @odekake_types.count %></p>
+<div class="w-full mt-12">
+  <p class="text-xl pb-3 flex items-center">
+    <i class="fas fa-list mr-3"></i>
+    All OdekakeTypes
+  </p>
+  <div class="bg-white overflow-auto">
+    <table class="min-w-full bg-white">
+      <thead class="bg-gray-800 text-white">
+        <tr>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+          <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">name</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">btn</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">btn</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+      <% @odekake_types.each_with_index do |odekake_type, i|  %>
+        <% color_class = 'bg-gray-200' if i.odd? %>
+        <tr class="<%= color_class %>">
+          <td class="w-1/3 text-left py-3 px-4">
+            <%= odekake_type.id %>
+          </td>
+          <td class="w-1/3 text-left py-3 px-4">
+            <%= odekake_type.name %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= link_to "編集", edit_admin_odekake_type_path(odekake_type), class: "btn" %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= button_to "削除", admin_odekake_type_path(odekake_type), method: :delete, class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

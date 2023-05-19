@@ -1,4 +1,4 @@
-class Admin::OdekakeTypesController < Admin::applicationController
+class Admin::OdekakeTypesController < Admin::ApplicationController
   before_action :set_odekake_type, only: %i[edit update show destroy]
 
   def new
@@ -6,12 +6,13 @@ class Admin::OdekakeTypesController < Admin::applicationController
   end
 
   def create
-    if @suncreen.save(odekake_type_params)
+    @odekake_type = OdekakeType.new(odekake_type_params)
+    if @odekake_type.save
       flash[:success] = t('defaults.message.created', item: OdekakeType.model_name.human)
-      redirect_to root_path
+      redirect_to admin_tags_path
     else
-      render :edit
       flash.now[:error] =  t('defaults.message.not_created', item: OdekakeType.model_name.human)
+      render :new
     end
   end
 
@@ -23,7 +24,7 @@ class Admin::OdekakeTypesController < Admin::applicationController
 
   def update
     if @odekake_type.update(odekake_type_params)
-      redirect_to admin_odekake_type_path(@odekake_types), success: t('defaults.message.updated', item: OdekakeType.model_name.human)
+      redirect_to admin_odekake_types_path, success: t('defaults.message.updated', item: OdekakeType.model_name.human)
     else
       flash.now[:error] = t('defaults.message.not_updated', item: OdekakeType.model_name.human)
       render :edit
