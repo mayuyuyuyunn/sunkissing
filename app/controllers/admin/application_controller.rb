@@ -5,7 +5,6 @@ class Admin::ApplicationController < ApplicationController
   private
 
   def check_admin
-    redirect_to root_path unless current_user.admin?
-    flash.now[:error] = '管理者権限を持っていません'
+    redirect_to root_path if current_user.nil? || !current_user.admin?
   end
 end
