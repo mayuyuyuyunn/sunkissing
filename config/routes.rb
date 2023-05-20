@@ -36,4 +36,6 @@ Rails.application.routes.draw do
     resources :odekake_types
     resources :dashboards
   end
+  # error
+  get '*path', to: 'application#render_404'
 end
