@@ -15,12 +15,12 @@ class ApplicationController < ActionController::Base
 
   def render_404(e = nil)
     logger.info "Rendering 404 with excaption: #{e.message}" if e
-    render 'errors/404', status: :not_found
+    render 'errors/404', status: :not_found, layour: "error"
   end
 
   def render_500(e = nil)
     logger.error "Rendering 500 with excaption: #{e.message}" if e
-    render "errors/500.html", status: :internal_server_error
+    render "errors/500.html", status: :internal_server_error, layout: "error"
   end
 
   private
