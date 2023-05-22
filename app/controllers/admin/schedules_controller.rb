@@ -2,7 +2,7 @@ class Admin::SchedulesController < Admin::ApplicationController
   before_action :set_schedule, only: %i[show destroy]
 
   def index
-    @schedules = Schedule.all
+    @schedules = Schedule.all.order(id: :desc)
   end
 
   def show; end

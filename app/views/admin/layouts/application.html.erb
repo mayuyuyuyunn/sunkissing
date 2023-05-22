@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sunkissing管理画面</title>
   <!-- Tailwind -->
@@ -17,11 +17,12 @@
       .nav-item:hover { background: #1947ee; }
       .account-link:hover { background: #3d68ff; }
   </style>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 </head>
 <body class="bg-gray-100 font-family-karla flex">
 <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
     <div class="p-6">
-      <%= link_to 'Admin', admin_root_path, class: 'text-white text-3xl font-semibold uppercase hover:text-gray-300' %>
+    <%= link_to 'Admin', admin_root_path, class: 'text-white text-3xl font-semibold uppercase hover:text-gray-300' %>
     </div>
     <nav class="text-white text-base font-semibold pt-3">
         <%= link_to admin_sunscreens_path, class: "flex items-center active-nav-link text-white py-4 pl-6 nav-item" do %>
@@ -31,6 +32,10 @@
 				<%= link_to admin_tags_path, class: "flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item" do %>
             <i class="fas fa-tablet-alt mr-3"></i>
             タグ
+        <% end %>
+        <%= link_to admin_sunscreen_tags_path, class: "flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item" do %>
+            <i class="fas fa-tablet-alt mr-3"></i>
+            日焼け止めタグ
         <% end %>
         <%= link_to admin_odekake_types_path, class: "flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item" do %>
             <i class="fas fa-table mr-3"></i>

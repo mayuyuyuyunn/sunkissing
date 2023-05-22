@@ -17,7 +17,7 @@ class Admin::TagsController < Admin::ApplicationController
   end
 
   def index
-    @tags = Tag.all
+    @tags = Tag.all.order(id: :asc)
   end
 
   def edit; end

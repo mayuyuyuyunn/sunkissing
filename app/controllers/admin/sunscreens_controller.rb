@@ -17,7 +17,7 @@ class Admin::SunscreensController < Admin::ApplicationController
   end
 
   def index
-    @sunscreens = Sunscreen.all
+    @sunscreens = @sunscreens = Sunscreen.all.order(id: :asc)
   end
 
   def edit; end

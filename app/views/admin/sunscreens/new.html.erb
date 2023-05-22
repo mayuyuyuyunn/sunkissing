@@ -30,6 +30,12 @@
           </div>
           <div class="form-control w-full">
             <div class='font-bold'>
+              <%= f.label :price %>
+            </div>
+            <%= f.text_field :price %>
+          </div>
+          <div class="form-control w-full">
+            <div class='font-bold'>
               <%= f.label :manufacture %>
             </div>
             <%= f.text_field :manufacture %>
@@ -44,7 +50,7 @@
             <div class='font-bold'>
               <%= f.label :summary %>
             </div>
-            <%= f.text_area :summary %>
+            <%= f.text_area :summary, size: "20x10" %>
           </div>
           <div class="form-control w-full">
             <div class='font-bold'>
@@ -56,7 +62,7 @@
             <div class='font-bold'>
               <%= f.label :rakuten_image_url %>
             </div>
-            <%= f.text_area :rakuten_image_url %>
+            <%= f.text_area :rakuten_image_url, size: "20x10" %>
           </div>
           <div class="link">
             <%= f.submit class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>

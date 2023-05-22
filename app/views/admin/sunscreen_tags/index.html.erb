@@ -1,0 +1,50 @@
+<h1 class="text-3xl text-black pb-6">日焼け止めタグ</h1>
+<%= link_to '日焼け止めタグ登録', new_admin_sunscreen_tag_path, class: 'btn' %>
+  <div class="w-full mt-12">
+    <p class="text-xl pb-3 flex items-center">データ件数: <%= @sunscreen_tags.count %></p>
+<div class="w-full mt-12">
+  <p class="text-xl pb-3 flex items-center">
+    <i class="fas fa-list mr-3"></i>
+    All SunscreenTags
+  </p>
+  <div class="bg-white overflow-auto">
+    <table class="min-w-full bg-white">
+      <thead class="bg-gray-800 text-white">
+        <tr>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">sunscreen_id</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">tag_id</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">sunscreen_name</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">tag_name</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">BTN</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+      <% @sunscreen_tags.each_with_index do |sunscreen_tag, i|  %>
+        <% color_class = 'bg-gray-200' if i.odd? %>
+        <tr class="<%= color_class %>">
+          <td class="text-left py-3 px-4">
+            <%= sunscreen_tag.id %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= sunscreen_tag.sunscreen_id %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= sunscreen_tag.tag_id %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= Sunscreen.find(sunscreen_tag.sunscreen_id).name %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= Tag.find(sunscreen_tag.tag_id).name %>
+          </td>
+          <td class="text-left py-3 px-4">
+            <%= button_to "削除", admin_sunscreen_tag_path(sunscreen_tag), method: :delete, class: "btn" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

@@ -1,5 +1,5 @@
 <h1 class="text-3xl text-black pb-6">日焼け止め</h1>
-<%= link_to '日焼け止め登録', new_admin_sunscreen_path, class: 'btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4' %>
+<%= link_to '日焼け止め登録', new_admin_sunscreen_path, class: 'btn' %>
 <div class="w-full mt-12">
   <p class="text-xl pb-3 flex items-center">データ件数: <%= @sunscreens.count %></p>
   <div class="w-full mt-12">
@@ -35,7 +35,7 @@
               <%= sunscreen.pa_i18n %>
             </td>
             <td class="text-left py-3 px-4">
-              <%= link_to "詳細", edit_admin_sunscreen_path(sunscreen), class: "btn" %>
+              <%= link_to "詳細", admin_sunscreen_path(sunscreen), class: "btn" %>
             </td>
           </tr>
         <% end %>
