@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :schedules
     resources :odekake_types
     resources :dashboards
+    resources :sunscreen_tags
   end
   # error
   get '*path', to: 'application#render_404'

@@ -1,2 +1,29 @@
-<h1>Admin::SunscreenTags#new</h1>
-<p>Find me in app/views/admin/sunscreen_tags/new.html.erb</p>
+<div class="hero min-h-screen bg-gray-50">
+  <div class='w-screen px-4 my-12 max-w-sm sm:max-w-lg mx-auto px-5 py-12 border border-indigo-300'>
+    <h1 class="text-3xl font-bold text-center mb-4">タグ登録</h1>
+    <div class="card flex-shrink-0 w-full shadow bg-base-100 mx-auto">
+      <div class="card-body text-center bt-3">
+        <%= form_with model: @sunscreen_tag, url: admin_sunscreen_tags_path, local: true do |f| %>
+          <div class="form">
+            <div class="form-control w-full">
+              <%= f.label :sunscreen_id, '日焼け止め' %>
+              <%= f.collection_select(:sunscreen_id, @sunscreens, :id, :name) %>
+            </div>
+            <div class="form-control w-full">
+              <%= f.label :tag_ids, 'タグ' %>
+            </div>
+            <div class="form">
+              <% @tags.each do |tag| %>
+                <%= check_box_tag 'sunscreen_tag[tag_ids][]', tag.id %>
+                <%= tag.name %>
+              <% end %>
+            </div>
+            <div class="link">
+              <%= f.submit class: "btn btn-wide bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
