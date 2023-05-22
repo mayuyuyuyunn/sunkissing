@@ -45,13 +45,13 @@
             <% end %>
         </p>
         <div class="link text-center mt-5">
-          <%= link_to '⭐️楽天で購入する⭐️', url_for(@sunscreen.rakuten_url), class: "purupuru btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>
+          <%= link_to "⭐️楽天で購入する⭐️", url_for(@sunscreen.rakuten_url), class: "purupuru btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4"%>
         </div>
         <div class="link text-center pt-5">
           <%= link_to "日焼け止めを編集する", edit_admin_sunscreen_path(@sunscreen), class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
         </div>
         <div class="link text-center pt-5">
-          <%= link_to "日焼け止め一覧へ", sunscreens_path, class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
+          <%= link_to "日焼け止め一覧へ", admin_sunscreens_path, class: "btn btn-wide text-center bg-orange-400 hover:bg-orange-300 text-black border-0 mt-5 mb-4" %>
         </div>
       </div>
     </div>

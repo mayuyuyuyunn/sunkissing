@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::ApplicationController
   before_action :set_user, only: %i[show destroy]
 
   def index
-    @users = User.all
+    @users = User.all.order(id: :asc)
   end
 
   def show; end
