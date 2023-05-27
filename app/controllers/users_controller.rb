@@ -28,11 +28,11 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "プロフィールの登録をしました"
+      flash[:success] = t('defaults.message.updated', item: User.model_name.human)
       redirect_to root_path
     else
       render :edit
-      flash.now[:error] = "プロフィールの登録に失敗しました"
+      flash.now[:error] = t('defaults.message.not_updated', item: User.model_name.human)
     end
   end
 
