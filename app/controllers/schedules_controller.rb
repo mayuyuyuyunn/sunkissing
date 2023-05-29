@@ -8,10 +8,10 @@ class SchedulesController < ApplicationController
   def create
     @schedule = current_user.schedules.build(schedule_params)
     if @schedule.save
-      flash[:success] = t('defaults.message.created', item: Schedule.model_name.human)
+      flash[:success] = "スケジュールを登録しました！"
       redirect_to schedule_path(@schedule.id)
     else
-      flash.now[:error] = t('defaults.message.not_created', item: Schedule.model_name.human)
+      flash.now[:error] = "スケジュールの登録に失敗しました"
       render :new
     end
   end
@@ -19,7 +19,7 @@ class SchedulesController < ApplicationController
   def destroy
     @schedule = current_user.schedules.find(params[:id])
     @schedule.destroy!
-    flash[:success] = t('defaults.message.deleted', item: Schedule.model_name.human)
+    flash[:success] = "スケジュールを削除しました！"
     redirect_to root_path
   end
 
