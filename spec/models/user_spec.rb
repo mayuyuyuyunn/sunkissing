@@ -23,5 +23,38 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'バリデーション' do
+    it 'line_user_idが必須であること' do
+      user = FactoryBot.build(:user, line_user_id: nil)
+      expect(user).not_to be_valid
+      expect(user.errors[:line_user_id]).to include('を入力してください')
+    end
+
+    it 'roleがデフォルト値であること' do
+      user = FactoryBot.build(:user)
+      expect(user.role).to eq('general')
+    end
+  end
+
+  describe 'デフォルト値' do
+    it 'ageが"age_not_selected"であること' do
+      user = FactoryBot.build(:user)
+      expect(user.age).to eq('age_not_selected')
+    end
+
+    it 'genderが"gender_not_selected"であること' do
+      user = FactoryBot.build(:user)
+      expect(user.gender).to eq('gender_not_selected')
+    end
+
+    it 'skin_typeが"normal"であること' do
+      user = FactoryBot.build(:user)
+      expect(user.skin_type).to eq('normal')
+    end
+
+    it 'prefecture_idがデフォルト値であること' do
+      user = FactoryBot.build(:user)
+      expect(user.prefecture_id).to eq(99)
+    end
+  end
 end

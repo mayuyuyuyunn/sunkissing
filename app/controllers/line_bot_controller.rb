@@ -1,5 +1,6 @@
 class LineBotController < ApplicationController
   require 'line/bot'
+  # CSRF保護から除外する
   protect_from_forgery except: [:callback]
 
   def callback
@@ -19,7 +20,6 @@ class LineBotController < ApplicationController
       end
     end
   end
-
 
   private
 
