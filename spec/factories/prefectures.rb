@@ -12,9 +12,10 @@
 #
 FactoryBot.define do
   factory :prefecture do
+    id { 99 }
     name { "MyString" }
-    city { "MyString" }
-    lat { 1.5 }
-    lon { 1.5 }
+    capital_city { "Mystring" }
+    latitude { 1.5 }
+    longitude { 1.5 }
   end
 end

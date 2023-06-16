@@ -22,7 +22,7 @@
 FactoryBot.define do
   factory :schedule do
     user { nil }
-    odekake_type { nil }
+    odekake_type { 1 }
     leave_home_time { '2023-01-15 17:49:32' }
   end
 end
