@@ -24,14 +24,14 @@ FactoryBot.define do
   factory :user do
     association :prefecture
     sequence(:line_user_id) { |n| "test_user_id_#{n}" }
-    role { 0 }
+    role { :general }
   end
 
   trait :admin do
-    role { 1 }
+    role { :admin }
   end
 
   trait :general do
-    role { 0 }
+    role { :general }
   end
 end
