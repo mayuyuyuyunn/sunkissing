@@ -22,7 +22,16 @@
 #
 FactoryBot.define do
   factory :user do
-    line_user_id { 'MyString' }
-    role { 1 }
+    association :prefecture
+    sequence(:line_user_id) { |n| "test_user_id_#{n}" }
+    role { :general }
+  end
+
+  trait :admin do
+    role { :admin }
+  end
+
+  trait :general do
+    role { :general }
   end
 end
