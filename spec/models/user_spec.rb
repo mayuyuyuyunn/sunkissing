@@ -24,13 +24,12 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'バリデーション' do
-
     it '正常系' do
       user = build(:user)
       expect(user).to be_valid
       expect(user.errors).to be_empty
     end
-    
+
     it 'line_user_idが存在する場合、有効であること' do
       user = build(:user)
       expect(user).to be_valid
@@ -49,7 +48,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'ageが存在しない場合、無効であること' do
-      user = build(:user, age: nil )
+      user = build(:user, age: nil)
       expect(user).not_to be_valid
     end
 
@@ -59,7 +58,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'genderが存在しない場合、無効であること' do
-      user = build(:user, gender: nil )
+      user = build(:user, gender: nil)
       expect(user).not_to be_valid
     end
 
@@ -69,7 +68,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'skin_typeが存在しない場合、無効であること' do
-      user = build(:user, skin_type: nil )
+      user = build(:user, skin_type: nil)
       expect(user).not_to be_valid
     end
 
@@ -79,7 +78,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'prefecture_idが存在しない場合、無効であること' do
-      user = build(:user, prefecture_id: nil )
+      user = build(:user, prefecture_id: nil)
       expect(user).not_to be_valid
     end
   end

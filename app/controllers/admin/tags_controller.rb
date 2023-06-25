@@ -11,7 +11,7 @@ class Admin::TagsController < Admin::ApplicationController
       flash[:success] = t('defaults.message.created', item: Tag.model_name.human)
       redirect_to admin_tags_path
     else
-      flash.now[:error] =  t('defaults.message.not_created', item: Tag.model_name.human)
+      flash.now[:error] = t('defaults.message.not_created', item: Tag.model_name.human)
       render :new
     end
   end

@@ -13,14 +13,13 @@ class UsersController < ApplicationController
   def create
     id_token = params[:idToken]
     channel_id = '1657853635'
-    res = Net::HTTP.post_form(URI.parse('https://api.line.me/oauth2/v2.1/verify'), {'id_token'=>id_token, 'client_id'=>channel_id})
-    line_user_id = JSON.parse(res.body)["sub"]
-    user = User.find_by(line_user_id: line_user_id)
+    res = Net::HTTP.post_form(URI.parse('https://api.line.me/oauth2/v2.1/verify'), { 'id_token' => id_token, 'client_id' => channel_id })
+    line_user_id = JSON.parse(res.body)['sub']
+    user = User.find_by(line_user_id:)
     if user.nil?
-      user = User.create(line_user_id: line_user_id)
-    elsif
-      session[:user_id] = user.id
-      render :json => user
+      user = User.create(line_user_id:)
+    elsif (session[:user_id] = user.id)
+      render json: user
     end
   end
 
@@ -28,11 +27,11 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "プロフィールの登録をしました"
+      flash[:success] = 'プロフィールの登録をしました'
       redirect_to root_path
     else
       render :edit
-      flash.now[:error] = "プロフィールの登録に失敗しました"
+      flash.now[:error] = 'プロフィールの登録に失敗しました'
     end
   end
 

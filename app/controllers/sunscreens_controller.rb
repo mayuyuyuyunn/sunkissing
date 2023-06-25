@@ -1,6 +1,6 @@
 class SunscreensController < ApplicationController
-  before_action :set_q, only: [:index, :search]
-  
+  before_action :set_q, only: %i[index search]
+
   def show
     @sunscreen = Sunscreen.find(params[:id])
   end
@@ -8,7 +8,7 @@ class SunscreensController < ApplicationController
   def index
     @sunscreens = Sunscreen.all.order(price: :asc)
   end
-  
+
   def search
     if params[:tag_id].present?
       @tag = Tag.find(params[:tag_id])
@@ -23,5 +23,4 @@ class SunscreensController < ApplicationController
   def set_q
     @q = Sunscreen.ransack(params[:q])
   end
-
 end

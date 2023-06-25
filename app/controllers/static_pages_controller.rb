@@ -7,20 +7,15 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def privacy_policy
-  end
+  def privacy_policy; end
 
-  def terms
-  end
+  def terms; end
 
-  def after_login
-  end
+  def after_login; end
 
-  def before_login
-  end
+  def before_login; end
 
-  def friend
-  end
+  def friend; end
 
   def calendar
     @schedules = current_user.schedules

@@ -11,7 +11,7 @@ class Admin::OdekakeTypesController < Admin::ApplicationController
       flash[:success] = t('defaults.message.created', item: OdekakeType.model_name.human)
       redirect_to admin_tags_path
     else
-      flash.now[:error] =  t('defaults.message.not_created', item: OdekakeType.model_name.human)
+      flash.now[:error] = t('defaults.message.not_created', item: OdekakeType.model_name.human)
       render :new
     end
   end

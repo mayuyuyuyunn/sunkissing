@@ -32,9 +32,9 @@ class Schedule < ApplicationRecord
   scope :schedule_at_today, -> { where(leave_home_time: Date.today.all_day) }
 
   def start_time
-    self.leave_home_time
+    leave_home_time
   end
-  
+
   private
 
   def valid_unique_today

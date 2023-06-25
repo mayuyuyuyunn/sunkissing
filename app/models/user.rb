@@ -29,7 +29,7 @@ class User < ApplicationRecord
   validates :gender, presence: true
   validates :skin_type, presence: true
   validates :prefecture_id, presence: true
-  
+
   enum role: { general: 0, admin: 1 }
   enum age: { age_not_selected: 0, teen: 10, twenty: 20, thirty: 30, forty: 40, fifty: 50, sixth: 60, age_other: 99 }
   enum gender: { gender_not_selected: 0, male: 1, female: 2, gender_other: 99 }
