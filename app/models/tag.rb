@@ -15,6 +15,5 @@ class Tag < ApplicationRecord
   has_many :sunscreen_tags, dependent: :destroy
   has_many :sunscreens, through: :sunscreen_tags
 
-
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
 end

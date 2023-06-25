@@ -37,9 +37,7 @@ class Sunscreen < ApplicationRecord
     validates :brand
   end
 
-  private 
-  
-  def self.ransackable_attributes(auth_object = nil)
-    ["brand", "capacity", "manufacture", "name", "pa", "price", "spf", "rakuten_url", "rakuten_image_url"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[brand capacity manufacture name pa price spf rakuten_url rakuten_image_url]
   end
 end

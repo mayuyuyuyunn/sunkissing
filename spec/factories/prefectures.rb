@@ -13,8 +13,8 @@
 FactoryBot.define do
   factory :prefecture do
     id { 99 }
-    name { "MyString" }
-    capital_city { "Mystring" }
+    name { 'MyString' }
+    capital_city { 'Mystring' }
     latitude { 1.5 }
     longitude { 1.5 }
   end
