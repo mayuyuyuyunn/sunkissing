@@ -1,45 +1,111 @@
-# .rubocop.yml
-
-inherit_from: .rubocop_todo.yml
-
-inherit_mode:
-  merge:
-    - Exclude
-
 require:
-  - rubocop-performance
-  - rubocop-rubycw
   - rubocop-rails
 
 AllCops:
-  # defaultで全てdisableにして設定したいものだけEnabled:trueに設定
-  DisabledByDefault: true
+  # スタイルガイドをtrue 
+  DisplayStyleGuide: true
+  # 日本語使用するために追加
+  StyleGuideBaseURL: https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md
+  # 拡張機能などのサジェスト不要
+  SuggestExtensions: false
+  #　除外するファイルを追加
   Exclude:
-    - 'gems/**/*'
-  # rubocop のバージョンをアップグレードしたときに新しいCopが自動的に有効になる設定。
-  NewCops: enable
-
-Bundler:
-  Enabled: true
-
-Gemspec:
-  Enabled: true
-
-Lint:
-  Enabled: true
-
-Performance:
-  Enabled: true
-
-Rubycw:
-  Enabled: true
-
-Security:
-  Enabled: true
-
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'lib/tasks/oneshot/**/*'
+    - 'config/**/*'
+    - 'mechanize-scrape/**/*'
+  # どのcopに引っかかったのかを表示させる便利なやつ
+  DisplayCopNames: true
+# ブロックの改行specファイルはfalse
+Layout/MultilineBlockLayout:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+# メソッドのABCサイズ(代入少なく、関数呼び出し少なく、制御構文少なく)
+Metrics/AbcSize:
+  Max: 20
+# ブロックの長さの最大値を指定、自動生成されるファイルは除く
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'Gemfile'
+    - 'config/**/*'
+    - 'lib/tasks/**/*'
+    - 'spec/**/*'
+    - 'mechanize-scrape/**/*'
+# クラスの長さが最大値を超えていないか確認
+Metrics/ClassLength:
+  CountComments: false
+  Max: 200
+# メソッドの循環的複雑度が設定された最大値を超えないことを確認
+Metrics/CyclomaticComplexity:
+  Max: 30
+# ブロックの長さが最大値を超えていないか確認
+Metrics/BlockLength:
+  Max: 34
+  Exclude:
+    - "spec/**/*"
+    - "lib/tasks/**/*"
+# メソッドの長さの最大値を確認
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+# モジュールの長さが最大値を超えているかどうかを確認
+Metrics/ModuleLength:
+  CountComments: false
+  Exclude:
+    - 'app/helpers/**/*'
+# ソースコードの長さをチェック
+Layout/LineLength:
+  Enabled: false
+# アクセサメソッドのルール
+Naming/AccessorMethodName:
+  Enabled: false
+# コメント日本語引っかからないように
+Style/AsciiComments:
+  Enabled: false
+# do .. end から更にメソッドチェーンすると見づらいので
+# auto-correct せず、自分で修正する
+# spec内は見た目が綺麗になるので許可
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+# ネスト記法でもコンパクト記法でもどっちでもOK
+Style/ClassAndModuleChildren:
+  Enabled: false
+# ドキュメントの無い public class を許可する
 Style/Documentation:
   Enabled: false
-
-# クォーテーションのチェックを無効に
-Style/StringLiterals:
+# frozen_string_literal に関するチェックをfalse
+Style/FrozenStringLiteralComment:
   Enabled: false
+# 条件式の方を意識させたい場合には後置の if/unless を使わない方が分かりやすい
+Style/IfUnlessModifier:
+  Enabled: false
+# while until の間が1行80文字収まる場合に1行で記述しているかチェックする
+Style/WhileUntilModifier:
+  Enabled: false
+# gemの順番をアルファベット順にする
+Bundler/OrderedGems:
+  Enabled: false
+# !! のイディオムは積極的に使う
+Style/DoubleNegation:
+  Enabled: false
+# elseの中にif入れんならelsifにして
+Style/IfInsideElse:
+  Enabled: false
+# ガード節の使用を確認
+Style/GuardClause:
+  Enabled: false
+# isはオブジェクト指向的に使うこともあり得るから
+Naming/PredicateName:
+  Enabled: false
+# 環境を認識してくれるように記述
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
