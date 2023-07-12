@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   # ユーザー登録・ログイン周り
   resource :user, only: %i[new create edit update]
-  resources :users, only: %i[create new]
   # 日焼け止め
   resources :sunscreens do
     collection do
