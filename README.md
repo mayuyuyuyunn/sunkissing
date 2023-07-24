@@ -72,11 +72,13 @@
 **バックエンド**
   - Ruby （3.1.2）
   - Rails （7.0.4）
+    
 **フロントエンド**
   - LINE Front-end Framework（LIFF）v2.22.2
   - JavaScript
   - DaisyUI
   - Tailwind CSS
+    
 **インフラ**
   - Heroku
   - mkcert v1.4.4(ローカルでのみ使用)
