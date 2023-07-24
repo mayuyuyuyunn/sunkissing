@@ -1,15 +1,24 @@
 <div align="center">
-  <h1>Sunkissing</h1>
-  <p>日焼け対策、毎日</p>
-  <p>"しっかり"していますか？</p>
+  <h1>Sunkissing - 日焼け止め塗り直し通知アプリ -</h1>
+  <h2>日焼け対策、毎日</h2>
+  <h2>"しっかり"していますか？</h2>
     <img src="https://github.com/mayuyuyuyunn/sunkissing/blob/main/app/assets/images/sunkissing_logo.png?raw=true" alt="Sunkissng image"/>
-  <p><a href="https://www.sunkissing.net">Sunkissing top page へ</a></p>
 </div>
+
+  <p><a href="https://www.sunkissing.net">Sunkissing TOP PAGE へ</a></p>
+  <p>※スマートフォンから見ることをおすすめします！</p>
 
 ## サービス概要
   日焼け止めの塗り直しをリマインドするサービスです。
 
   その日の紫外線の強さによって適切な日焼け止めの強さを提案、あなたの予定に合わせてLINEで日焼け止めの塗り直しをLINEでリマインドします。
+
+## 使い方
+| 準備：QRコードから友だち追加します。 | 1. トーク画面から<br>アプリを開きます。 | 2. スケジュール作成ボタンを押します<br> |
+| ---- | ---- | ---- |
+| <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/ad45611c-c91b-4cd6-9df8-10b40a5f186c" width="500x500"> |
+| 3.スケジュールを登録します | 4.登録いただいた情報に合わせて<br>LINEが届きます！ | 番外編： 右上の太陽マークから<br>各種設定ができます。　|
+| ---- | ---- | ---- |
 
 ## メインのターゲットユーザー
   日焼け止めを毎日丁寧に塗っても朝しか塗っていない人
@@ -56,6 +65,19 @@
 ## 今後実装を考えている機能
   - LINEのトーク画面から紫外線情報が見れる機能
   - スケジュールをまとめて登録できる機能
+
+## 使用技術
+**バックエンド**
+  - Ruby （3.1.2）
+  - Rails （7.0.4）
+**フロントエンド**
+  - LINE Front-end Framework（LIFF）v2.22.2
+  - JavaScript
+  - DaisyUI
+  - Tailwind CSS
+**インフラ**
+  - Heroku
+  - mkcert v1.4.4(ローカルでのみ使用)
 
 ## 画面遷移図
 [画面遷移図](https://www.figma.com/file/AuTXzXzspRWLh4hymbQoxy/Sunkissing!!?node-id=0%3A1&t=wDW6wXZRubjHHtvq-0)
