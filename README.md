@@ -13,7 +13,7 @@
   その日の紫外線の強さによって適切な日焼け止めの強さを提案、あなたの予定に合わせてLINEで日焼け止めの塗り直しをLINEでリマインドします。
 
 ## 使い方
-| 準備：QRコードから友だち追加します。 | 1. トーク画面からアプリを開きます。 | 2. スケジュール作成ボタンを押します<br> |
+| 準備：QRコードから友だち追加します。 | 1. トーク画面から</br>アプリを開きます。 | 2. スケジュール作成ボタンを押します<br> |
 | ---- | ---- | ---- |
 | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/ad45611c-c91b-4cd6-9df8-10b40a5f186c" width="500x500"> | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/15cafc4d-6d2f-416b-96b6-1731c8e55865" width="500x500"> | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/166ea73a-3d0d-4f06-a21a-c68713fd8e82" width="500x500"> |
 
