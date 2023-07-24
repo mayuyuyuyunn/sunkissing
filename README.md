@@ -1,5 +1,6 @@
 <div align="center">
   <h1>Sunkissing - 日焼け止め塗り直し通知アプリ -　</h1>
+  <div><p>日焼け対策、毎日</br>"しっかり"していますか？</p></div>
     <img src="https://github.com/mayuyuyuyunn/sunkissing/blob/main/app/assets/images/sunkissing_logo.png?raw=true" alt="Sunkissng image"/>
 </div>
 
