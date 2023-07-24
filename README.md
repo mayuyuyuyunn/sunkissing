@@ -5,19 +5,20 @@
 </div>
 
   <p><a href="https://www.sunkissing.net">Sunkissing TOP PAGE へ</a></p>
-  <p>※スマートフォンから見ることをおすすめします！</p>
 
+※**スマートフォンからご利用ください**
+  
 ## サービス概要
   日焼け止めの塗り直しをリマインドするサービスです。
 
   その日の紫外線の強さによって適切な日焼け止めの強さを提案、あなたの予定に合わせてLINEで日焼け止めの塗り直しをLINEでリマインドします。
 
-## 使い方
+## 使い方　※スマートフォンから見ることをおすすめします
 | 準備：QRコードから友だち追加します。 | 1. トーク画面から</br>アプリを開きます。 | 2. スケジュール作成ボタンを押します<br> |
 | ---- | ---- | ---- |
 | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/ad45611c-c91b-4cd6-9df8-10b40a5f186c" width="500x500"> | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/15cafc4d-6d2f-416b-96b6-1731c8e55865" width="500x500"> | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/166ea73a-3d0d-4f06-a21a-c68713fd8e82" width="500x500"> |
 
-| 3.スケジュールを登録します | 4.登録いただいた情報に合わせてLINEが届きます！ | 番外編： 右上の太陽マークから各種設定ができます。　|
+| 3.スケジュールを登録します | 4.登録いただいた情報に合わせてLINEが届きます！ | 番外編： 右上の太陽マークがメニューボタンになっています☀️　|
 | ---- | ---- | ---- |
 | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/b64ca5b0-f1c9-4198-8035-4d56255584f3" width="500x500"> | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/84553032-57b7-4151-b2bb-cb5146cec209" width="500x500"> | <img src="https://github.com/mayuyuyuyunn/sunkissing/assets/95003927/91598314-d0e7-4ca7-8642-f3d368e1a764" width="500x500"> |
 
@@ -31,6 +32,7 @@
 - 日焼け止めの塗り直す頻度がわからない、分かっていてもうっかり忘れてしまう
 - そもそも日焼け止めを塗る習慣がない
 - 日焼け止めの使い分け方法がわからない
+- どの日焼け止めを塗ればいいのか分からない
 
 ## 解決方法
 - 予定に合わせて2〜3時間起きに日焼け止めを塗り直すようLINEで通知する。
