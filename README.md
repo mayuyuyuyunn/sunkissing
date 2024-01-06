@@ -5,8 +5,7 @@
 </div>
 
   <p><a href="https://www.sunkissing.net">Sunkissing TOP PAGE へ</a></p>
-
-※**スマートフォンからご利用ください**
+  <strong>⚠️現在はサービスを停止しております</strong>
   
 ## サービス概要
   日焼け止めの塗り直しをリマインドするサービスです。
